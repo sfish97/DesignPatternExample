@@ -20,9 +20,5 @@ public class UnitTests {
 
     }
     
-    @Test
-    public void doFail() {
-        fail();
-    }
      
 }
