@@ -1,0 +1,61 @@
+plugins {
+  id "com.github.spotbugs" version "3.0.0"
+}
+
+apply plugin: 'application'
+apply plugin: 'checkstyle'
+
+mainClassName = 'main.java.Main'
+
+repositories {
+    jcenter()
+}
+
+dependencies{
+	spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.7.1'
+	compile "junit:junit:4.12"
+}
+
+
+//JUNIT
+test {
+    reports {
+        junitXml.enabled = false
+        html.enabled = true
+    }              
+}
+
+//Checkstyle setup//
+checkstyle{
+	toolVersion = '8.8'
+	ignoreFailures = true
+	showViolations = false
+	configFile file("config/checkstyle/checkstyle.xml")
+}
+
+checkstyleMain{
+	source = 'main/java'
+}
+
+checkstyleTest{
+	source = 'test/java'
+}
+
+tasks.withType(Checkstyle) {
+	reports {
+    	html.enabled = true
+     	xml.enabled = false
+    }
+}
+
+spotbugs{
+	ignoreFailures = true;
+}
+
+//Spotbugs setup
+tasks.withType(com.github.spotbugs.SpotBugsTask) {
+	reports {
+    	xml.enabled = false
+     	html.enabled = true
+   }
+}
