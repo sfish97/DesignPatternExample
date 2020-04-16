@@ -2,7 +2,9 @@ package main.java;
 
 import java.util.ArrayList;
 
+import main.java.powers.Air;
 import main.java.powers.Fire;
+import main.java.powers.Water;
 
 public class Main {
       static String[]  city_names = {"Aberdeen", "Abilene", "Akron", "Albany", "Albuquerque", "Alexandria", "Allentown", "Amarillo", "Anaheim", "Anchorage", 
@@ -47,8 +49,16 @@ public class Main {
                 
         Person p1 = new BaseHero();
         p1 = new Fire(p1);
+        p1 = new Water(p1);
         
-        System.out.println(p1.getPowers());
+        Person p2 = new BaseHero();
+        p2 = new Air(p2);
+        System.out.println(p2.getPowers());
+        p2 = new Water(p2);
+        System.out.println(p2.getPowers());
+        p2 = new Fire(p2);
+        System.out.println(p2.getPowers());
+        
         
     }
 

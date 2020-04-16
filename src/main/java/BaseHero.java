@@ -20,7 +20,7 @@ public class BaseHero implements Person {
         
         String temp = "";
         for(String iter : allPowers) {
-            temp += iter;
+            temp += iter + " ";
         }
         return temp;
     }
