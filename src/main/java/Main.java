@@ -2,6 +2,8 @@ package main.java;
 
 import java.util.ArrayList;
 
+import main.java.powers.Fire;
+
 public class Main {
       static String[]  city_names = {"Aberdeen", "Abilene", "Akron", "Albany", "Albuquerque", "Alexandria", "Allentown", "Amarillo", "Anaheim", "Anchorage", 
                       "Ann Arbor", "Antioch", "Apple Valley", "Appleton", "Arlington", "Arvada", "Asheville", "Athens", "Atlanta", "Atlantic City", 
