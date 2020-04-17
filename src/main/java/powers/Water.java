@@ -7,15 +7,11 @@ public class Water extends PersonDecorator {
     
     public Water(Person c) {
         super(c);
-        giveWaterPower();
+        super.setPowerInfo("Water", 2);
         
     }
-    
-    public void giveWaterPower() {
-        super.setPower("Water");
-    }
-    
-    public String getPowers() {
-        return super.getPowers();
+
+    public String getPowersInfo() {
+        return super.getPowersInfo();
     }
 }

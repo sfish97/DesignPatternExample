@@ -3,24 +3,41 @@ package main.java;
 import java.util.ArrayList;
 
 public class BaseVillian implements Person {
-    private ArrayList<String> allPowers;
+    private ArrayList<PowerInfo> allPowers;
     
     public BaseVillian() {
         allPowers = new ArrayList<>();
     }
     
     @Override
-    public String getPowers() {
+    public String getPowersInfo() {
         if(allPowers.size() == 0) {
-            return "[BASEVILLAN.getPowers()] Person Has No Powers. This shouldn't be a thing.";
+            return "[BASEVILLIAN.getPowers()] Person Has No Powers. This shouldn't be a thing.";
         }
         
-        return allPowers.toArray().toString();
+        String temp = "";
+        
+        for(int iter = 0; iter < allPowers.size(); iter++) {
+            temp += allPowers.get(iter).getPower() + " ";
+        }
+        
+        return temp;
     }
 
     @Override
-    public void setPower(String string) {
-        allPowers.add(string);
+    public void setPowerInfo(String string, int level) {
+        
+        //Look to see if the person contains the power already. If so, add the level
+        for(int iter = 0; iter < allPowers.size(); iter++) {
+            PowerInfo temp = allPowers.get(iter);
+            if(temp.getPower().equals(string)) {
+                temp.addLevel(level);
+                return;
+            }
+        }
+        
+        
+        allPowers.add(new PowerInfo(string, level));
         
     }
 

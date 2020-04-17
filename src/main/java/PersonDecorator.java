@@ -8,14 +8,16 @@ public class PersonDecorator implements Person {
         this.person = c;
     }
     
-    public String getPowers() {
-        return person.getPowers();
+    public String getPowersInfo() {
+        return person.getPowersInfo();
     }
 
-    public void setPower(String string) {
-        person.setPower(string);
+    public void setPowerInfo(String string, int level) {
+        person.setPowerInfo(string, level);
         
     }
+    
+    
 
 }
 

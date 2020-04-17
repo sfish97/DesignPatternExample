@@ -47,19 +47,16 @@ public class Main {
     public static void main(String[] args) {
         String[] powers = {"Water", "Fire", "Earth", "Air", "Metal", "Lava"};
                 
-        Person p1 = new BaseHero();
-        p1 = new Fire(p1);
-        p1 = new Water(p1);
+        Person hero = new BaseHero();
+        hero = new Fire(hero);
+        hero = new Fire(hero);
         
-        Person p2 = new BaseHero();
-        p2 = new Air(p2);
-        System.out.println(p2.getPowers());
-        p2 = new Water(p2);
-        System.out.println(p2.getPowers());
-        p2 = new Fire(p2);
-        System.out.println(p2.getPowers());
+        Person villian = new BaseHero();
+        villian = new Water(villian);
+        villian = new Water(villian);
         
-        
+        System.out.println(hero.getPowersInfo());
+        System.out.println(villian.getPowersInfo());
     }
 
 }

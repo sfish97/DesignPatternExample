@@ -7,16 +7,12 @@ public class Air extends PersonDecorator {
 
     public Air(Person c) {
         super(c);
-        giveAirPower();
+        super.setPowerInfo("Air", 2);
         
     }
-    
-    public void giveAirPower() {
-        super.setPower("Air");
-    }
-    
-    public String getPowers() {
-        return super.getPowers();
+        
+    public String getPowersInfo() {
+        return super.getPowersInfo();
     }
 
 }
