@@ -1,6 +1,7 @@
 package main.java;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import main.java.powers.Air;
 import main.java.powers.Fire;
@@ -45,18 +46,64 @@ public class Main {
       static ArrayList<String> allCities = new ArrayList<>();
         
     public static void main(String[] args) {
-        String[] powers = {"Water", "Fire", "Earth", "Air", "Metal", "Lava"};
+        String[] powers = {"Water", "Fire", "Earth", "Air", "Metal", "Lava", "Lightning"};
+        String[] powers2 = {"Water", "Fire", "Air"};
+        
+        
+        ArrayList<Person> allPersons = new ArrayList<>();
+        
+        
+        //rand.nextInt((max-min) + 1) + min;
+        Random rand = new Random();
+        
+        
+        for(int x = 0; x < 20; x++) {
+            Person h;
+            //Chose a random number to determine if a villian or hero gets made
+            int num = rand.nextInt((1 - 0) + 1) + 0;
+            if(num == 1) {
+               h = new BaseHero();
+            }
+            else {
+                h = new BaseVillian();
+            }
+            
+            //Get the index of powers 2
+            int index = rand.nextInt(((powers2.length-1)) + 1);
+            
+            if(powers2[index].equals("Water")) {
+                h = new Water(h);
                 
-        Person hero = new BaseHero();
-        hero = new Fire(hero);
-        hero = new Fire(hero);
+            }else if(powers2[index].equals("Fire")) {
+                h = new Fire(h);
+                
+            }else {
+                h = new Air(h);
+            }
+            
+            allPersons.add(h);
+            
+        }
         
-        Person villian = new BaseHero();
-        villian = new Water(villian);
-        villian = new Water(villian);
+        for(Person h : allPersons) {
+            int index = rand.nextInt(((powers2.length-1)) + 1);
+            
+            if(powers2[index].equals("Water")) {
+                h = new Water(h);
+                
+            }else if(powers2[index].equals("Fire")) {
+                h = new Fire(h);
+                
+            }else {
+                h = new Air(h);
+            }
+        }
         
-        System.out.println(hero.getPowersInfo());
-        System.out.println(villian.getPowersInfo());
+        
+        for(Person p : allPersons) {
+            System.out.println("----Person----");
+            System.out.println(p.getPowersInfo() + "\n\n");
+        }
     }
 
 }

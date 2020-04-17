@@ -18,7 +18,7 @@ public class BaseVillian implements Person {
         String temp = "";
         
         for(int iter = 0; iter < allPowers.size(); iter++) {
-            temp += allPowers.get(iter).getPower() + " ";
+            temp += "Power: " + allPowers.get(iter).getPower() + "  Level: " + allPowers.get(iter).getLevel() + "\n";
         }
         
         return temp;

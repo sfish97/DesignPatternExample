@@ -21,7 +21,7 @@ public class BaseHero implements Person {
         String temp = "";
         
         for(int iter = 0; iter < allPowers.size(); iter++) {
-            temp += "Power: " + allPowers.get(iter).getPower() + "  Level: " + allPowers.get(iter).getLevel();
+            temp += "Power: " + allPowers.get(iter).getPower() + "  Level: " + allPowers.get(iter).getLevel() + "\n";
         }
         
         return temp;
