@@ -46,6 +46,11 @@ public class Main {
       static ArrayList<String> allCities = new ArrayList<>();
         
     public static void main(String[] args) {
+        
+        
+        /*
+         * ********* CREATE RANDOM HEROES/VILLIANS *********************
+         */
         String[] powers = {"Water", "Fire", "Earth", "Air", "Metal", "Lava", "Lightning"};
         String[] powers2 = {"Water", "Fire", "Air"};
         
@@ -102,8 +107,14 @@ public class Main {
         
         for(Person p : allPersons) {
             System.out.println("----Person----");
+            System.out.println("Person Type: " + p.getPersonType());
+            System.out.println("Hitpoints: " + p.getHitpoints());
             System.out.println(p.getPowersInfo() + "\n\n");
         }
+        
+        /*
+         * *********** END OF CREATING HEROS / VILLIANS **********************
+         */
     }
 
 }

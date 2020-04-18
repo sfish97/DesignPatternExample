@@ -4,9 +4,14 @@ import java.util.ArrayList;
 
 public class BaseVillian implements Person {
     private ArrayList<PowerInfo> allPowers;
+    private String personType;
+    private int hitpoints;
+
     
     public BaseVillian() {
-        allPowers = new ArrayList<>();
+        this.allPowers = new ArrayList<>();
+        this.personType = "Villian";
+        this.hitpoints = 100;
     }
     
     @Override
@@ -37,8 +42,24 @@ public class BaseVillian implements Person {
         }
         
         
-        allPowers.add(new PowerInfo(string, level));
+        allPowers.add(new PowerInfo(string, level));      
+    }
+    
+    @Override
+    public String getPersonType() {
+        return this.personType;
+    }
+    
+    @Override
+    public void damagePerson(int value) {
+        this.hitpoints -= value;
         
+    }
+
+
+    @Override
+    public int getHitpoints() {
+        return this.hitpoints;
     }
 
 }
