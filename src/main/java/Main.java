@@ -61,16 +61,18 @@ public class Main {
         //rand.nextInt((max-min) + 1) + min;
         Random rand = new Random();
         
-        
+        int heroValue = 1;
+        int villianValue = 1;
         for(int x = 0; x < 20; x++) {
             Person h;
             //Chose a random number to determine if a villian or hero gets made
             int num = rand.nextInt((1 - 0) + 1) + 0;
+
             if(num == 1) {
-               h = new BaseHero();
+               h = new BaseHero(heroValue++);
             }
             else {
-                h = new BaseVillian();
+                h = new BaseVillian(villianValue++);
             }
             
             //Get the index of powers 2
@@ -108,6 +110,7 @@ public class Main {
         for(Person p : allPersons) {
             System.out.println("----Person----");
             System.out.println("Person Type: " + p.getPersonType());
+            System.out.println("Person Name: " + p.getName());
             System.out.println("Hitpoints: " + p.getHitpoints());
             System.out.println(p.getPowersInfo() + "\n\n");
         }
@@ -115,6 +118,28 @@ public class Main {
         /*
          * *********** END OF CREATING HEROS / VILLIANS **********************
          */
+        
+        //Grab 1 Hero, 1 villian
+        Person hero = null;
+        Person villian = null;
+        for(int x = 0; x < allPersons.size(); x++) {
+            if(allPersons.get(x).getPersonType().equals("Hero") && hero == null) {
+                hero = allPersons.get(x);
+            }
+            else if(allPersons.get(x).getPersonType().equals("Villian") && villian == null) {
+                villian = allPersons.get(x);
+            }
+        }
+        
+        //System.out.println("Meteor Shower Battle between: " + hero.getName() + " and " + villian.getName());
+        
+        BattleDecider test = new BattleDecider(hero, villian);
+    }
+    
+    public static void gameInitialize() {
+        //Tick based: Initialize the world then: 
+        //Way the simulation works. Clash, Clash, Clash, Make.
+        
     }
 
 }

@@ -34,6 +34,11 @@ public class PersonDecorator implements Person {
         return person.getHitpoints();
     }
     
+    @Override
+    public String getName() {
+        return person.getName();
+    }
+    
 }
 
 

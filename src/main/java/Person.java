@@ -7,5 +7,6 @@ public interface Person {
     public String getPersonType();
     public void damagePerson(int value);
     public int getHitpoints();
+    public String getName();
     
 }

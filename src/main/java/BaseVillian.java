@@ -6,12 +6,19 @@ public class BaseVillian implements Person {
     private ArrayList<PowerInfo> allPowers;
     private String personType;
     private int hitpoints;
-
+    private String name;
     
     public BaseVillian() {
         this.allPowers = new ArrayList<>();
         this.personType = "Villian";
         this.hitpoints = 100;
+    }
+    
+    public BaseVillian(int villianNumber) {
+        this.allPowers = new ArrayList<>();
+        this.personType = "Villian";
+        this.hitpoints = 100;
+        this.name = "Villian" + villianNumber;
     }
     
     @Override
@@ -60,6 +67,11 @@ public class BaseVillian implements Person {
     @Override
     public int getHitpoints() {
         return this.hitpoints;
+    }
+    
+    @Override
+    public String getName() {
+        return name;
     }
 
 }

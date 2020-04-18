@@ -6,6 +6,7 @@ public class BaseHero implements Person {
     private ArrayList<PowerInfo> allPowers;
     private String personType;
     private int hitpoints;
+    private String name;
     
     public BaseHero() {
         this.allPowers = new ArrayList<>();
@@ -13,6 +14,12 @@ public class BaseHero implements Person {
         this.hitpoints = 100;
     }
     
+    public BaseHero(int heroNumber) {
+        this.allPowers = new ArrayList<>();
+        this.personType = "Hero";
+        this.hitpoints = 100;
+        this.name = "Hero" + heroNumber;
+    }
     
     
     
@@ -67,6 +74,11 @@ public class BaseHero implements Person {
     @Override
     public int getHitpoints() {
         return this.hitpoints;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
     
     
