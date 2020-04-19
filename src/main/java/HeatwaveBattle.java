@@ -2,12 +2,12 @@ package main.java;
 
 import java.util.Random;
 
-public class BlizzardBattle implements Battles {
+public class HeatwaveBattle implements Battles {
     
     private Person attacker1;
     private Person attacker2;
     
-    public BlizzardBattle(Person hero, Person villian) {       
+    public HeatwaveBattle(Person hero, Person villian) {       
         //Roll the dice to see who hits first
         Random rand = new Random();
         int num = rand.nextInt((1 - 0) + 1) + 0;
@@ -35,7 +35,7 @@ public class BlizzardBattle implements Battles {
         //START BATTLE
         //Attacker1 hits first, check health, Attacker 2 hits, check health
         
-        System.out.println("\n------  BATTLE BETWEEN " + attacker1.getName() + " AND " + attacker2.getName() + " IN A BLIZZARD STORM!!!  ------");
+        System.out.println("\n------  BATTLE BETWEEN " + attacker1.getName() + " AND " + attacker2.getName() + " IN A HEATWAVE!!!  ------");
         System.out.println(attacker1.getName() + " PowerInfo");
         
         for(PowerInfo pi : attacker1.getPowersInfo()) {
@@ -102,26 +102,26 @@ public class BlizzardBattle implements Battles {
         for(PowerInfo iter : attacker.getPowersInfo()) {
             String powerName = iter.getPower();
             
-            if(powerName.equals("Water")) {             //Double the Water Level
-                level += iter.getLevel() * 2;
-            }
-            else if(powerName.equals("Fire")){          //Give only 1 point for Fire
+            if(powerName.equals("Water")) {             //Give 1 point for having a Water Level
                 level += 1;
             }
-            else if(powerName.equals("Air")) {          //Give Air Level an increase of
-                level += iter.getLevel()  + 3;
+            else if(powerName.equals("Fire")){          //Double the Fire Level
+                level += iter.getLevel() * 2;
             }
-            else if(powerName.equals("Earth")) {        //Earth Level stays the same
+            else if(powerName.equals("Air")) {          //Air Level stays the same
                 level += iter.getLevel();
             }
-            else if(powerName.equals("Metal")) {        //Metal Level stays the same
-                level += iter.getLevel();
+            else if(powerName.equals("Earth")) {        //Earth Level is diminished
+                level += iter.getLevel()/2;
             }
-            else if(powerName.equals("Lava")) {         //Only 2 points are given if they have Lava Power
-                level += 2;
+            else if(powerName.equals("Metal")) {        //Metal Level is diminished
+                level += iter.getLevel()/2;
             }
-            else if(powerName.equals("Lightning")) {    //Lightning Power stays the same;
-                level += iter.getLevel();
+            else if(powerName.equals("Lava")) {         //Lava Level stays the same
+                level += iter.getLevel();;
+            }
+            else if(powerName.equals("Lightning")) {    //Lightning Power is slightly diminshed 
+                level += iter.getLevel()/4;
             }
 
         }

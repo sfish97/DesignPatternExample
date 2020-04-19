@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import main.java.powers.Air;
+import main.java.powers.Earth;
 import main.java.powers.Fire;
+import main.java.powers.Lava;
+import main.java.powers.Lightning;
+import main.java.powers.Metal;
 import main.java.powers.Water;
 
 public class Main {
@@ -51,8 +55,7 @@ public class Main {
         /*
          * ********* CREATE RANDOM HEROES/VILLIANS *********************
          */
-        String[] powers = {"Water", "Fire", "Earth", "Air", "Metal", "Lava", "Lightning"};
-        String[] powers2 = {"Water", "Fire", "Air"};
+        String[] powers = {"Water", "Fire", "Earth", "Air", "Lightning", "Metal", "Lava"};
         
         ArrayList<Person> allPersons = new ArrayList<>();
         ArrayList<Person> allHeroes = new ArrayList<>();
@@ -78,36 +81,33 @@ public class Main {
             }
             
             //Get the index of powers 2
-            int index = rand.nextInt(((powers2.length-1)) + 1);
+            int index = rand.nextInt(((powers.length-1)) + 1);
             
-            if(powers2[index].equals("Water")) {
-                h = new Water(h);
-                
-            }else if(powers2[index].equals("Fire")) {
-                h = new Fire(h);
-                
-            }else {
+            if(powers[index].equals("Water")) {
+                h = new Water(h);       
+            }
+            else if(powers[index].equals("Fire")) {
+                h = new Fire(h);  
+            }
+            else if(powers[index].equals("Earth")) {
+                h = new Earth(h);
+            }
+            else if(powers[index].equals("Air")){
                 h = new Air(h);
+            }
+            else if(powers[index].equals("Metal")) {
+                h = new Metal(h);  
+            }
+            else if(powers[index].equals("Lightning")) {
+                h = new Lightning(h);
+            }
+            else if(powers[index].equals("Lava")){
+                h = new Lava(h);
             }
             
             allPersons.add(h);
             
         }
-        
-        for(Person h : allPersons) {
-            int index = rand.nextInt(((powers2.length-1)) + 1);
-            
-            if(powers2[index].equals("Water")) {
-                h = new Water(h);
-                
-            }else if(powers2[index].equals("Fire")) {
-                h = new Fire(h);
-                
-            }else {
-                h = new Air(h);
-            }
-        }
-        
         
 //        for(Person p : allPersons) {
 //            System.out.println("----Person----");
@@ -125,8 +125,9 @@ public class Main {
         
         System.out.println("The World Has Been Initialized Randomly.\n There are " + allHeroes.size() + " Heroes and " + allVillians.size() + " Villians.");
         
-        
+        int day = 1;
         while(allHeroes.size() != 0 || allVillians.size() != 0) {
+            System.out.println("\nDay " + day);
             Person hero = null;
             Person villian = null;
             int getHero;
@@ -161,16 +162,17 @@ public class Main {
                 
                 allHeroes.remove(hero);
             }
-
+            
+            day++;
             
         } 
         
         if(allHeroes.size() == 0) {
-            System.out.println("THE VILLIANS HAVE OVERTAKEN THE HEROES! THE WORLD IS NOW ENTERING A NEW AGE...OF DARKNESS");
+            System.out.println("\n\nTHE VILLIANS HAVE OVERTAKEN THE HEROES! THE WORLD IS NOW ENTERING A NEW AGE...OF DARKNESS");
         }
         
         if(allVillians.size() == 0) {
-            System.out.println("ALL THE VILLIANS HAVE BEEN DEFEATED! CHAOS AROUND THE WORLD COMING TO HALT. A NEW AGE OF LIGHT IS HERE");
+            System.out.println("\n\nALL THE VILLIANS HAVE BEEN DEFEATED! CHAOS AROUND THE WORLD IS FINALLY COMING TO A HALT. A NEW AGE OF LIGHT IS HERE");
         }
 
 
