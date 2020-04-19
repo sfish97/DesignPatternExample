@@ -3,6 +3,7 @@ package main.java.StrategyPattern;
 import java.util.Random;
 
 import main.java.DecoratorPattern.Person;
+import main.java.DecoratorPattern.PowerInfo;
 
 public class BattleDecider {
     private Battles fight;
@@ -34,7 +35,25 @@ public class BattleDecider {
     }
     
     public Person initBattle() {
-        return fight.battle();
+        Person winner = fight.battle();
+        
+        //Winner gets the defeated powers
+        if(winner == hero) {
+            
+            for(PowerInfo pi : villian.getPowersInfo()) {
+                winner.setPowerInfo(pi.getPower(), pi.getLevel());
+            }
+            
+            return winner;
+        }
+        else {
+            for(PowerInfo pi : hero.getPowersInfo()) {
+                winner.setPowerInfo(pi.getPower(), pi.getLevel());
+            }
+          
+            return winner;
+        }
+
     }
     
 }

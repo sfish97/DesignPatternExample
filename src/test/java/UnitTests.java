@@ -13,6 +13,7 @@ import org.junit.Test;
 
 import main.java.DecoratorPattern.Air;
 import main.java.DecoratorPattern.BaseHero;
+import main.java.DecoratorPattern.BaseVillian;
 import main.java.DecoratorPattern.Earth;
 import main.java.DecoratorPattern.Fire;
 import main.java.DecoratorPattern.Lava;
@@ -20,7 +21,9 @@ import main.java.DecoratorPattern.Lightning;
 import main.java.DecoratorPattern.Metal;
 import main.java.DecoratorPattern.Person;
 import main.java.DecoratorPattern.Water;
-import main.java.StrategyPattern.BaseVillian;
+import main.java.StrategyPattern.BattleDecider;
+import main.java.StrategyPattern.BlizzardBattle;
+import main.java.StrategyPattern.HeatwaveBattle;
 
 public class UnitTests {
     
@@ -115,10 +118,23 @@ public class UnitTests {
         //Checks to make sure the Person type and Number are combined correctly.
         assertEquals("Hero1", hero.getName());          
         assertEquals("Villian1", villian.getName());
-        
-        
+  
     }
-     
+
+    @Test
+    public void testBattleWinnerHasLosersPower() {
+        BattleDecider decider1 = new BattleDecider(waterHero, waterVillian);
+        decider1.setBattle(new BlizzardBattle(waterHero, waterVillian));
+        
+        BattleDecider decider2 = new BattleDecider(fireHero, fireVillian);
+        decider2.setBattle(new HeatwaveBattle(fireHero, fireVillian));
+        
+        Person winner1 = decider1.initBattle();
+        Person winner2 = decider2.initBattle();
+        
+        assertEquals(4, winner1.getPowersInfo().get(0).getLevel());     //Combining 2 base Water Level should give 4
+        assertEquals(6, winner2.getPowersInfo().get(0).getLevel());     //Combining 2 base Fire Levels should give 6
+    }
     
      
 }

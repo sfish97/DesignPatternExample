@@ -1,9 +1,6 @@
-package main.java.StrategyPattern;
+package main.java.DecoratorPattern;
 
 import java.util.ArrayList;
-
-import main.java.DecoratorPattern.Person;
-import main.java.DecoratorPattern.PowerInfo;
 
 public class BaseVillian implements Person {
     private ArrayList<PowerInfo> allPowers;

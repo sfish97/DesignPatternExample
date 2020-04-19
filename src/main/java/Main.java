@@ -5,6 +5,7 @@ import java.util.Random;
 
 import main.java.DecoratorPattern.Air;
 import main.java.DecoratorPattern.BaseHero;
+import main.java.DecoratorPattern.BaseVillian;
 import main.java.DecoratorPattern.Earth;
 import main.java.DecoratorPattern.Fire;
 import main.java.DecoratorPattern.Lava;
@@ -13,7 +14,6 @@ import main.java.DecoratorPattern.Metal;
 import main.java.DecoratorPattern.Person;
 import main.java.DecoratorPattern.PowerInfo;
 import main.java.DecoratorPattern.Water;
-import main.java.StrategyPattern.BaseVillian;
 import main.java.StrategyPattern.BattleDecider;
 
 public class Main {
@@ -149,19 +149,10 @@ public class Main {
               BattleDecider test = new BattleDecider(hero, villian);
               Person winner = test.initBattle();
     
-              if(winner == hero) {
-                
-                  for(PowerInfo pi : villian.getPowersInfo()) {
-                      winner.setPowerInfo(pi.getPower(), pi.getLevel());
-                  }
-                
+              if(winner == hero) {            
                   allVillians.remove(villian);
               }
-              else {
-                  for(PowerInfo pi : hero.getPowersInfo()) {
-                      winner.setPowerInfo(pi.getPower(), pi.getLevel());
-                  }
-                
+              else {              
                   allHeroes.remove(hero);
               }
               
