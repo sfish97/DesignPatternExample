@@ -15,15 +15,17 @@ public class BattleDecider {
     }
     
     public void chooseRandomBattle() {
-        Random rand = new Random();
-        int num = rand.nextInt((1 - 0) + 1) + 0;
+        setBattle(new BlizzardBattle(hero, villian));
         
-        if(num == 0) {
-            setBattle(new BlizzardBattle(hero, villian));
-        }
-        else {
-            setBattle(new MeteorShowerBattle(hero, villian));
-        }
+//        Random rand = new Random();
+//        int num = rand.nextInt((1 - 0) + 1) + 0;
+//        
+//        if(num == 0) {
+//            setBattle(new BlizzardBattle(hero, villian));
+//        }
+//        else {
+//            setBattle(new MeteorShowerBattle(hero, villian));
+//        }
     }
     
     public void setBattle(Battles battle) {

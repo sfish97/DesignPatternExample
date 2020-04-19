@@ -7,9 +7,7 @@ public class BlizzardBattle implements Battles {
     private Person attacker1;
     private Person attacker2;
     
-    public BlizzardBattle(Person hero, Person villian) {
-        System.out.println("Blizzard Battle");
-        
+    public BlizzardBattle(Person hero, Person villian) {       
         //Roll the dice to see who hits first
         Random rand = new Random();
         int num = rand.nextInt((1 - 0) + 1) + 0;
@@ -36,14 +34,32 @@ public class BlizzardBattle implements Battles {
         
         //START BATTLE
         //Attacker1 hits first, check health, Attacker 2 hits, check health
+        
+        System.out.println("\n------  BATTLE BETWEEN " + attacker1.getName() + " AND " + attacker2.getName() + " IN A BLIZZARD STORM!!!  ------");
+        System.out.println(attacker1.getName() + " PowerInfo");
+        
+        for(PowerInfo pi : attacker1.getPowersInfo()) {
+            System.out.println(pi.getPower() + "   " + pi.getLevel());
+        }
+        
+        System.out.println("\n" + attacker2.getName() + " PowerInfo");
+        
+        for(PowerInfo pi : attacker2.getPowersInfo()) {
+            System.out.println(pi.getPower() + "   " + pi.getLevel());
+        }
+        
+        
         while(true) {
             //Attacker 1 Hits
             damage = getDamageAmount(attacker1Level);
-            
             attacker2.damagePerson(damage);
+            
+            //System.out.println(attacker1.getName() + " hit " + attacker2.getName() + " for " + damage + " hitpoints!" + attacker2.getName() + " HAS " + attacker2.getHitpoints() + " LEFT!");
             
             winner = checkWinner(2);
             if(winner) {
+                System.out.println("\nAND THE WINNER IS " + attacker1.getName() + " AND GAINS THE POWER OF THE DEFEATED!");
+                System.out.println("------------------------------------------------------------------------");
                 return attacker1;
             }
             
@@ -51,10 +67,13 @@ public class BlizzardBattle implements Battles {
             damage = getDamageAmount(attacker2Level);
             
             attacker1.damagePerson(damage);
+            //System.out.println(attacker2.getName() + " hit " + attacker1.getName() + " for " + damage + " hitpoints!" + attacker1.getName() + " HAS " + attacker1.getHitpoints() + " LEFT!");
             
             winner = checkWinner(1);
             if(winner) {
-                return attacker1;
+                System.out.println("\nAND THE WINNER IS " + attacker2.getName() + " AND GAINS THE POWER OF THE DEFEATED!");
+                System.out.println("------------------------------------------------------------------------");
+                return attacker2;
             }
         }
 
