@@ -3,13 +3,18 @@ package main.java;
 import java.util.ArrayList;
 import java.util.Random;
 
-import main.java.powers.Air;
-import main.java.powers.Earth;
-import main.java.powers.Fire;
-import main.java.powers.Lava;
-import main.java.powers.Lightning;
-import main.java.powers.Metal;
-import main.java.powers.Water;
+import main.java.DecoratorPattern.Air;
+import main.java.DecoratorPattern.BaseHero;
+import main.java.DecoratorPattern.Earth;
+import main.java.DecoratorPattern.Fire;
+import main.java.DecoratorPattern.Lava;
+import main.java.DecoratorPattern.Lightning;
+import main.java.DecoratorPattern.Metal;
+import main.java.DecoratorPattern.Person;
+import main.java.DecoratorPattern.PowerInfo;
+import main.java.DecoratorPattern.Water;
+import main.java.StrategyPattern.BaseVillian;
+import main.java.StrategyPattern.BattleDecider;
 
 public class Main {
       static String[]  city_names = {"Aberdeen", "Abilene", "Akron", "Albany", "Albuquerque", "Alexandria", "Allentown", "Amarillo", "Anaheim", "Anchorage", 
@@ -65,6 +70,7 @@ public class Main {
           int villianValue = 1;
           for(int x = 0; x < 20; x++) {
               Person h;
+              
               //Chose a random number to determine if a villian or hero gets made
               int num = rand.nextInt((1 - 0) + 1) + 0;
 
