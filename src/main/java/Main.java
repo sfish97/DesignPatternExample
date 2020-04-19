@@ -52,139 +52,147 @@ public class Main {
                       "Tyler", "Utica", "Vallejo", "Vancouver", "Vero Beach", "Victorville", "Virginia Beach", "Visalia", "Waco", "Warren", "Washington", "Waterbury", "Waterloo",
                       "West Covina", "West Valley City", "Westminster", "Wichita", "Wilmington", "Winston", "Winter Haven", "Worcester", "Yakima", "Yonkers", "York", "Youngstown"};
       
-      static ArrayList<String> allCities = new ArrayList<>();
+    static ArrayList<String> allCities = new ArrayList<>();
       
-      static String[] powers = {"Water", "Fire", "Earth", "Air", "Lightning", "Metal", "Lava"};
-      static ArrayList<Person> allPersons = new ArrayList<>();
-      static ArrayList<Person> allHeroes = new ArrayList<>();
-      static ArrayList<Person> allVillians = new ArrayList<>();
+    static String[] powers = {"Water", "Fire", "Earth", "Air", "Lightning", "Metal", "Lava"};
+    static ArrayList<Person> allPersons = new ArrayList<>();
+    static ArrayList<Person> allHeroes = new ArrayList<>();
+    static ArrayList<Person> allVillians = new ArrayList<>();
     
       
       
-      
-      public static void gameInitialize() {
-          //Tick based: Initialize the world then: 
-          Random rand = new Random();
+    /** Initialize the game world by created a random number of
+     *  heroes and villians. Then give each hero/villian 1 Random Power
+     * 
+     */
+    public static void gameInitialize() {
+        //Tick based: Initialize the world then: 
+        Random rand = new Random();
           
-          int heroValue = 1;
-          int villianValue = 1;
-          for(int x = 0; x < 20; x++) {
-              Person h;
+        int heroValue = 1;
+        int villianValue = 1;
+        
+        for (int x = 0; x < 20; x++) {
+            Person h;
               
-              //Chose a random number to determine if a villian or hero gets made
-              int num = rand.nextInt((1 - 0) + 1) + 0;
+            //Chose a random number to determine if a villian or hero gets made
+            int num = rand.nextInt((1 - 0) + 1) + 0;
 
-              if(num == 1) {
-                 h = new BaseHero(heroValue++);
-                 allHeroes.add(h);
-              }
-              else {
-                  h = new BaseVillian(villianValue++);
-                  allVillians.add(h);
-              }
+            if (num == 1) {
+                h = new BaseHero(heroValue++);
+                allHeroes.add(h);
+            } else {
+                h = new BaseVillian(villianValue++);
+                allVillians.add(h);
+            }
               
-              //Get the index of powers 2
-              int index = rand.nextInt(((powers.length-1)) + 1);
+            //Get the index of powers 2
+            int index = rand.nextInt(((powers.length - 1)) + 1);
               
-              if(powers[index].equals("Water")) {
-                  h = new Water(h);       
-              }
-              else if(powers[index].equals("Fire")) {
-                  h = new Fire(h);  
-              }
-              else if(powers[index].equals("Earth")) {
-                  h = new Earth(h);
-              }
-              else if(powers[index].equals("Air")){
-                  h = new Air(h);
-              }
-              else if(powers[index].equals("Metal")) {
-                  h = new Metal(h);  
-              }
-              else if(powers[index].equals("Lightning")) {
-                  h = new Lightning(h);
-              }
-              else if(powers[index].equals("Lava")){
-                  h = new Lava(h);
-              }
+            if (powers[index].equals("Water")) {
+                h = new Water(h);       
+            } else if (powers[index].equals("Fire")) {
+                h = new Fire(h);  
+            } else if (powers[index].equals("Earth")) {
+                h = new Earth(h);
+            } else if (powers[index].equals("Air")) {
+                h = new Air(h);
+            } else if (powers[index].equals("Metal")) {
+                h = new Metal(h);  
+            } else if (powers[index].equals("Lightning")) {
+                h = new Lightning(h);
+            } else if (powers[index].equals("Lava")) {
+                h = new Lava(h);
+            }
               
-              allPersons.add(h);
+            allPersons.add(h);
               
-          }
+        }
           
-          System.out.println("The World Has Been Initialized Randomly.\n There are " + allHeroes.size() + " Heroes and " + allVillians.size() + " Villians.");
+        System.out.println("The World Has Been Initialized Randomly.");
+        System.out.println("There are " + allHeroes.size() + " Heroes and " 
+                            + allVillians.size() + " Villians.");
+                
           
           
-//          for(Person p : allPersons) {
-//              System.out.println("----Person----");
-//              System.out.println("Person Type: " + p.getPersonType());
-//              System.out.println("Person Name: " + p.getName());
-//              System.out.println("Hitpoints: " + p.getHitpoints());
-//              System.out.println(p.getPowersInfo() + "\n\n");
-//          }
+        //for(Person p : allPersons) {
+        //System.out.println("----Person----");
+        //System.out.println("Person Type: " + p.getPersonType());
+        //System.out.println("Person Name: " + p.getName());
+        //System.out.println("Hitpoints: " + p.getHitpoints());
+        //System.out.println(p.getPowersInfo() + "\n\n");}
           
-      }
-      
-      public static void battle() {
-          Random rand = new Random();
-          int day = 1;
-          
-          while(allHeroes.size() != 0 || allVillians.size() != 0) {
-              Person hero = null;
-              Person villian = null;
-              int getHero;
-              int getVillian;
-              
-              System.out.println("\nDay " + day);
-
-              getHero = rand.nextInt(((allHeroes.size()-1)) + 1);
-              getVillian = rand.nextInt(((allVillians.size()-1)) + 1); 
-
-
-            
-            
-              hero = allHeroes.get(getHero);
-              villian = allVillians.get(getVillian);
-            
-              BattleDecider test = new BattleDecider(hero, villian);
-              Person winner = test.initBattle();
+    }
     
-              if(winner == hero) {            
-                  allVillians.remove(villian);
-              }
-              else {              
-                  allHeroes.remove(hero);
-              }
-              
-              if(allHeroes.size() == 0 || allVillians.size()==0) {
-                  break;
-              }
-            
-              day++;
-            
-          } 
-
-      }
-      
-      
-      public static void printWinner() {
-          if(allHeroes.size() == 0) {
-              System.out.println("\n\nTHE VILLIANS HAVE OVERTAKEN THE HEROES! THE WORLD IS NOW ENTERING A NEW AGE...OF DARKNESS");
-          }
+    /** Battle function that chooses 1 random hero/villian
+     *  and makes them fight with in a random Battle.
+     * 
+     */
+    public static void battle() {
+        Random rand = new Random();
+        int day = 1;
           
-          if(allVillians.size() == 0) {
-              System.out.println("\n\nALL THE VILLIANS HAVE BEEN DEFEATED! CHAOS AROUND THE WORLD IS FINALLY COMING TO A HALT. A NEW AGE OF LIGHT IS HERE");
-          }
-      }
+        while (allHeroes.size() != 0 || allVillians.size() != 0) {
+            int getHero;
+            int getVillian;
+              
+            System.out.println("\nDay " + day);
+
+            getHero = rand.nextInt(((allHeroes.size() - 1)) + 1);
+            getVillian = rand.nextInt(((allVillians.size() - 1)) + 1);
+            
+            Person hero = allHeroes.get(getHero);
+            Person villian = allVillians.get(getVillian);
+          
+            BattleDecider test = new BattleDecider(hero, villian);
+            Person winner = test.initBattle();
+    
+            if (winner == hero) {            
+                allVillians.remove(villian);
+            } else {              
+                allHeroes.remove(hero);
+            }
+              
+            if (allHeroes.size() == 0 || allVillians.size() == 0) {
+                break;
+            }
+            
+            day++;
+            
+        } 
+    
+    }
+      
+    
+    /** Print out who won. Either the Heroes for a New Age of Light
+     *  Or the Villians, who bring a New Age of Darkness
+     * 
+     */
+    public static void printWinner() {
+        if (allHeroes.size() == 0) {
+            System.out.println("\n\nTHE VILLIANS HAVE OVERTAKEN THE HEROES! "
+                    + "THE WORLD IS NOW ENTERING A NEW AGE...OF DARKNESS");
+        }
+          
+        if (allVillians.size() == 0) {
+            System.out.println("\n\nALL THE VILLIANS HAVE BEEN DEFEATED! CHAOS AROUND THE WORLD "
+                    + "IS FINALLY COMING TO A HALT. A NEW AGE OF LIGHT IS HERE");
+        }
+    }
       
       
-      
-      public static void main(String[] args) {
-          gameInitialize();
-          battle();
-          printWinner();
+    /** Main Function that Initializes the game with heroes/villians
+    * Then battles all the heroes/villians until one group is defeated
+    * Lastly it will print the winner.
+    * 
+    * @param args If any arugments get passed
+    */
+    public static void main(String[] args) {
+        gameInitialize();
+        battle();
+        printWinner();
   
-      }
+    }
     
 
 }
