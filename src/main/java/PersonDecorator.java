@@ -1,5 +1,7 @@
 package main.java;
 
+import java.util.ArrayList;
+
 public class PersonDecorator implements Person {
     private Person person;
     
@@ -8,7 +10,7 @@ public class PersonDecorator implements Person {
     }
     
     @Override
-    public String getPowersInfo() {
+    public ArrayList<PowerInfo> getPowersInfo() {
         return person.getPowersInfo();
     }
 
@@ -23,14 +25,14 @@ public class PersonDecorator implements Person {
     } 
     
     @Override
-    public void damagePerson(int value) {
+    public void damagePerson(double value) {
         person.damagePerson(value);
         
     }
 
 
     @Override
-    public int getHitpoints() {
+    public double getHitpoints() {
         return person.getHitpoints();
     }
     

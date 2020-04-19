@@ -134,6 +134,11 @@ public class Main {
         //System.out.println("Meteor Shower Battle between: " + hero.getName() + " and " + villian.getName());
         
         BattleDecider test = new BattleDecider(hero, villian);
+        Person winner = test.initBattle();
+        
+        System.out.println(hero.getName() + " vs " + villian.getName());
+        System.out.println("The winner is: " + winner.getName());
+        
     }
     
     public static void gameInitialize() {

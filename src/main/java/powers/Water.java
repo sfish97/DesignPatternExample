@@ -1,7 +1,10 @@
 package main.java.powers;
 
+import java.util.ArrayList;
+
 import main.java.Person;
 import main.java.PersonDecorator;
+import main.java.PowerInfo;
 
 public class Water extends PersonDecorator {
     
@@ -11,7 +14,7 @@ public class Water extends PersonDecorator {
         
     }
 
-    public String getPowersInfo() {
+    public ArrayList<PowerInfo> getPowersInfo() {
         return super.getPowersInfo();
     }
 }

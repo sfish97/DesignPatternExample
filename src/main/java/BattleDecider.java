@@ -12,7 +12,6 @@ public class BattleDecider {
         this.villian = villian;
         
         chooseRandomBattle();
-        initBattle();
     }
     
     public void chooseRandomBattle() {
@@ -20,10 +19,10 @@ public class BattleDecider {
         int num = rand.nextInt((1 - 0) + 1) + 0;
         
         if(num == 0) {
-            setBattle(new BlizzardBattle());
+            setBattle(new BlizzardBattle(hero, villian));
         }
         else {
-            setBattle(new MeteorShowerBattle());
+            setBattle(new MeteorShowerBattle(hero, villian));
         }
     }
     
@@ -31,8 +30,8 @@ public class BattleDecider {
         this.fight = battle;
     }
     
-    public void initBattle() {
-        fight.battle(hero, villian);
+    public Person initBattle() {
+        return fight.battle();
     }
     
 }

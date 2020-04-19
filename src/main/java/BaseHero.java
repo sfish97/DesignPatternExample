@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class BaseHero implements Person {
     private ArrayList<PowerInfo> allPowers;
     private String personType;
-    private int hitpoints;
+    private double hitpoints;
     private String name;
     
     public BaseHero() {
@@ -24,18 +24,13 @@ public class BaseHero implements Person {
     
     
     @Override
-    public String getPowersInfo() {
+    public ArrayList<PowerInfo> getPowersInfo() {
         if(allPowers.size() == 0) {
-            return "[BASEHERO.getPowers()] Person Has No Powers. This shouldn't be a thing.";
+            System.out.println( "[BASEHERO.getPowers()] Person Has No Powers. This shouldn't be a thing.");
+            System.exit(0);
         }
-        
-        String temp = "";
-        
-        for(int iter = 0; iter < allPowers.size(); iter++) {
-            temp += "Power: " + allPowers.get(iter).getPower() + "  Level: " + allPowers.get(iter).getLevel() + "\n";
-        }
-        
-        return temp;
+              
+        return allPowers;
     }
 
 
@@ -65,14 +60,14 @@ public class BaseHero implements Person {
 
 
     @Override
-    public void damagePerson(int value) {
+    public void damagePerson(double value) {
         this.hitpoints -= value;
         
     }
 
 
     @Override
-    public int getHitpoints() {
+    public double getHitpoints() {
         return this.hitpoints;
     }
 
