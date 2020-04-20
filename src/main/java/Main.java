@@ -5,7 +5,7 @@ import java.util.Random;
 
 import main.java.decorator.Air;
 import main.java.decorator.BaseHero;
-import main.java.decorator.BaseVillian;
+import main.java.decorator.BaseVillain;
 import main.java.decorator.Earth;
 import main.java.decorator.Fire;
 import main.java.decorator.Lava;
@@ -23,7 +23,7 @@ public class Main {
     static ArrayList<Person> allHeroes = new ArrayList<>();
     static ArrayList<Person> allVillians = new ArrayList<>();
     static int heroValue = 1;
-    static int villianValue = 1;
+    static int villainValue = 1;
       
     /** Initialize the game world by created a random number of
      *  heroes and villians. Then give each hero/villian 1 Random Power
@@ -43,7 +43,7 @@ public class Main {
                 h = new BaseHero(heroValue++);
                 allHeroes.add(h);
             } else {
-                h = new BaseVillian(villianValue++);
+                h = new BaseVillain(villainValue++);
                 allVillians.add(h);
             }
               
@@ -136,7 +136,7 @@ public class Main {
             }
             
             //Every 4 days, heal the resting
-            if(day % 4 == 0) {
+            if (day % 4 == 0) {
                 healRested();
             }
             
@@ -146,7 +146,15 @@ public class Main {
         } 
     
     }
-      
+    
+    /** Select a random hero or villain. 
+     * It will select a Person and check if they are resting or not
+     * It will try 5 times to select a Person, and if every chosen person
+     * is resting, the last person selected will be picked. 
+     * 
+     * @param indicator Either a hero or villain
+     * @return  The Person
+     */
     public static Person selectPerson(int indicator) {
         Random rand = new Random();
         
@@ -194,10 +202,13 @@ public class Main {
         return person;
     }
     
+    /** Heal the rested by resetting their hitpoints.
+     * 
+     */
     public static void healRested() {
         
         for (Person p : allPersons) {
-            if(p.getIsResting()) {
+            if (p.getIsResting()) {
                 p.resetHitpoints();
                 p.setIsResting();
             }
@@ -253,7 +264,7 @@ public class Main {
         //For every new villian, grab a random villian inside the ArrayList and copy all 
         // its powers, but each power starts at base level
         for (int iter = 0; iter < amount; iter++) {
-            Person newVillian = new BaseVillian(villianValue++);
+            Person newVillian = new BaseVillain(villainValue++);
             
             int index = rand.nextInt(((allVillians.size() - 1)) + 1);
             

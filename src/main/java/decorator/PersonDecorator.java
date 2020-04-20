@@ -30,7 +30,6 @@ public class PersonDecorator implements Person {
         
     }
 
-
     @Override
     public double getHitpoints() {
         return person.getHitpoints();

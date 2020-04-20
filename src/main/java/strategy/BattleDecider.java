@@ -8,16 +8,16 @@ import main.java.decorator.PowerInfo;
 public class BattleDecider {
     private Battles fight;
     private Person hero;
-    private Person villian;
+    private Person villain;
     
     /** Constructor when a Battle needs to happen.
      * 
      * @param hero  The hero 
-     * @param villian   The villian
+     * @param villain   The villian
      */
-    public BattleDecider(Person hero, Person villian) {
+    public BattleDecider(Person hero, Person villain) {
         this.hero = hero;
-        this.villian = villian;
+        this.villain = villain;
 
         chooseRandomBattle();
     }
@@ -31,9 +31,9 @@ public class BattleDecider {
         int num = rand.nextInt((1 - 0) + 1) + 0;
         
         if (num == 0) {
-            setBattle(new BlizzardBattle(hero, villian));
+            setBattle(new BlizzardBattle(hero, villain));
         } else {
-            setBattle(new HeatwaveBattle(hero, villian));
+            setBattle(new HeatwaveBattle(hero, villain));
         }
     }
     
@@ -51,22 +51,22 @@ public class BattleDecider {
         
         //Checks if the hero/villian is resting
         // If their both resting, the hero wins
-        if (hero.getIsResting() && !villian.getIsResting()) {
-            winner = villian;
+        if (hero.getIsResting() && !villain.getIsResting()) {
+            winner = villain;
             
-            System.out.println(villian.getName() + " ATTACKED " + hero.getName() 
+            System.out.println(villain.getName() + " ATTACKED " + hero.getName() 
                                 + " WHILE HE WAS RESTING! THE HERO WAS KILLED INSTANTLY");
             
-        } else if (!hero.getIsResting() && villian.getIsResting()) {
+        } else if (!hero.getIsResting() && villain.getIsResting()) {
             winner = hero;
             
-            System.out.println(hero.getName() + " ATTACKED " + villian.getName() 
+            System.out.println(hero.getName() + " ATTACKED " + villain.getName() 
                                 + " WHILE HE WAS RESTING! THE VILLIAN HAS BEEN ELIMINATED");
             
-        } else if (hero.getIsResting() && villian.getIsResting()) {
+        } else if (hero.getIsResting() && villain.getIsResting()) {
             winner = hero;
             
-            System.out.println(hero.getName() + " AND " + villian.getName() + " WERE BOTH RESTING "
+            System.out.println(hero.getName() + " AND " + villain.getName() + " WERE BOTH RESTING "
                                 + "IN THE PARK UNTIL THEY STUMBLED UPON EACH OTHER! "
                                 + "THE HERO TOOK THE UPPER HAND AND DEFEATED THE VILLIAN");
         } else {
@@ -76,7 +76,7 @@ public class BattleDecider {
         //Winner gets the defeated powers
         if (winner == hero) {
             
-            for (PowerInfo pi : villian.getPowersInfo()) {
+            for (PowerInfo pi : villain.getPowersInfo()) {
                 winner.setPowerInfo(pi.getPower(), pi.getLevel());
             }
             

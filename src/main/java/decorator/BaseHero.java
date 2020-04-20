@@ -102,7 +102,7 @@ public class BaseHero implements Person {
 
     @Override
     public void resetHitpoints() {
-        this.hitpoints =100.0;
+        this.hitpoints = 100.0;
         
     }
     

@@ -2,7 +2,7 @@ package main.java.decorator;
 
 import java.util.ArrayList;
 
-public class BaseVillian implements Person {
+public class BaseVillain implements Person {
     private ArrayList<PowerInfo> allPowers;
     private String personType;
     private double hitpoints;
@@ -12,29 +12,29 @@ public class BaseVillian implements Person {
     /** Base constructor that doesnt give a name.
      * 
      */
-    public BaseVillian() {
+    public BaseVillain() {
         this.allPowers = new ArrayList<>();
-        this.personType = "Villian";
+        this.personType = "Villain";
         this.hitpoints = 100;
         this.isResting = false;
     }
     
-    /** Constructor to give the villian a name based on the number.
+    /** Constructor to give the villain a name based on the number.
      * 
-     * @param villianNumber  The Number the villian gets
+     * @param villainNumber  The Number the villain gets
      */
-    public BaseVillian(int villianNumber) {
+    public BaseVillain(int villainNumber) {
         this.allPowers = new ArrayList<>();
-        this.personType = "Villian";
+        this.personType = "Villain";
         this.hitpoints = 100;
-        this.name = "Villian" + villianNumber;
+        this.name = "Villain" + villainNumber;
         this.isResting = false;
     }
     
     @Override
     public ArrayList<PowerInfo> getPowersInfo() {
         if (allPowers.size() == 0) {
-            System.out.println("[BASEVILLIAN.getPowers()] Person Has No Powers. "
+            System.out.println("[BASEVILLAIN.getPowers()] Person Has No Powers. "
                     + "This shouldn't be a thing.");
             System.exit(0);
         }

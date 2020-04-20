@@ -4,16 +4,12 @@ package test.java;
 
 
 import static org.junit.Assert.assertEquals;
-
-import java.util.ArrayList;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import main.java.decorator.Air;
 import main.java.decorator.BaseHero;
-import main.java.decorator.BaseVillian;
+import main.java.decorator.BaseVillain;
 import main.java.decorator.Earth;
 import main.java.decorator.Fire;
 import main.java.decorator.Lava;
@@ -35,13 +31,13 @@ public class UnitTests {
     Person metalHero = new BaseHero();  
     Person lavaHero = new BaseHero();
     
-    Person waterVillian = new BaseVillian();
-    Person fireVillian = new BaseVillian();
-    Person earthVillian = new BaseVillian();
-    Person airVillian = new BaseVillian();   
-    Person lightningVillian = new BaseVillian();  
-    Person metalVillian = new BaseVillian();  
-    Person lavaVillian = new BaseVillian(); 
+    Person waterVillian = new BaseVillain();
+    Person fireVillian = new BaseVillain();
+    Person earthVillian = new BaseVillain();
+    Person airVillian = new BaseVillain();   
+    Person lightningVillian = new BaseVillain();  
+    Person metalVillian = new BaseVillain();  
+    Person lavaVillian = new BaseVillain(); 
     
     @Before
     public void setUp() throws Exception {
@@ -92,8 +88,11 @@ public class UnitTests {
     
     @Test
     public void testCombinePowers() {
-        waterHero.setPowerInfo("Water", 10);        //Add more water level to the heroes current water level
-        fireVillian.setPowerInfo("Fire", 5);        //Add more fire level to the villians current fire level
+        //Add more water level to the heroes current water level
+        waterHero.setPowerInfo("Water", 10);
+        
+        //Add more fire level to the villians current fire level
+        fireVillian.setPowerInfo("Fire", 5);        
         
         assertEquals(12, waterHero.getPowersInfo().get(0).getLevel(), .01);
         assertEquals(8, fireVillian.getPowersInfo().get(0).getLevel(), .01);
@@ -112,12 +111,15 @@ public class UnitTests {
     
     @Test
     public void testName() {
-        Person hero = new Water(new BaseHero(1));           //Create hero with a hero number of 1
-        Person villian = new Air(new BaseVillian(1));       //Create villian with a villian number of 1
+        //Create hero with a hero number of 1
+        Person hero = new Water(new BaseHero(1)); 
+        
+        //Create villian with a villian number of 1
+        Person villian = new Air(new BaseVillain(1));       
             
         //Checks to make sure the Person type and Number are combined correctly.
         assertEquals("Hero1", hero.getName());          
-        assertEquals("Villian1", villian.getName());
+        assertEquals("Villain1", villian.getName());
   
     }
 
@@ -132,8 +134,11 @@ public class UnitTests {
         Person winner1 = decider1.initBattle();
         Person winner2 = decider2.initBattle();
         
-        assertEquals(4, winner1.getPowersInfo().get(0).getLevel());     //Combining 2 base Water Level should give 4
-        assertEquals(6, winner2.getPowersInfo().get(0).getLevel());     //Combining 2 base Fire Levels should give 6
+        //Combining 2 base Water Level should give 4
+        assertEquals(4, winner1.getPowersInfo().get(0).getLevel());
+        
+        //Combining 2 base Fire Levels should give 6
+        assertEquals(6, winner2.getPowersInfo().get(0).getLevel());     
     }
     
      

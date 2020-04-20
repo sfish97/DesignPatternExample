@@ -10,20 +10,20 @@ public class BlizzardBattle implements Battles {
     private Person attacker1;
     private Person attacker2;
     
-    /** The Hero and Villian fight in a Blizzard.
+    /** The Hero and Villain fight in a Blizzard.
      * 
      * @param hero      The hero
-     * @param villian   The villian
+     * @param villain   The villain
      */
-    public BlizzardBattle(Person hero, Person villian) {       
+    public BlizzardBattle(Person hero, Person villain) {       
         //Roll the dice to see who hits first
         Random rand = new Random();
         int num = rand.nextInt((1 - 0) + 1) + 0;
         if (num == 0) {
             this.attacker1 = hero;
-            this.attacker2 = villian;
+            this.attacker2 = villain;7
         } else {
-            this.attacker1 = villian;
+            this.attacker1 = villain;
             this.attacker2 = hero;
         }
     }

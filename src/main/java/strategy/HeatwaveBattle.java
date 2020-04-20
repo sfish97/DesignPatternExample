@@ -10,20 +10,20 @@ public class HeatwaveBattle implements Battles {
     private Person attacker1;
     private Person attacker2;
     
-    /** The Hero and Villian fight in a Heatwave.
+    /** The Hero and Villain fight in a Heatwave.
      * 
      * @param hero      The hero
-     * @param villian   The villian
+     * @param villain   The villain
      */
-    public HeatwaveBattle(Person hero, Person villian) {       
+    public HeatwaveBattle(Person hero, Person villain) {       
         //Roll the dice to see who hits first
         Random rand = new Random();
         int num = rand.nextInt((1 - 0) + 1) + 0;
         if (num == 0) {
             this.attacker1 = hero;
-            this.attacker2 = villian;
+            this.attacker2 = villain;
         } else {
-            this.attacker1 = villian;
+            this.attacker1 = villain;
             this.attacker2 = hero;
         }
     }

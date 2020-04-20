@@ -1,6 +1,6 @@
 package main.java.decorator;
 
-public class PowerInfo{
+public class PowerInfo {
     private String power;
     private int level;
     
