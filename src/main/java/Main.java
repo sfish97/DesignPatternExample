@@ -90,7 +90,6 @@ public class Main {
      * 
      */
     public static void battle() {
-        Random rand = new Random();
         int day = 1;
         int daysUntilEvoulution = 5;
         int timeEvoulutionHappened = 1;

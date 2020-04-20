@@ -36,7 +36,6 @@ public class BaseVillain implements Person {
         if (allPowers.size() == 0) {
             System.out.println("[BASEVILLAIN.getPowers()] Person Has No Powers. "
                     + "This shouldn't be a thing.");
-            System.exit(0);
         }
               
         return allPowers;

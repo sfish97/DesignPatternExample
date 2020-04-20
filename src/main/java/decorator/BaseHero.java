@@ -39,7 +39,6 @@ public class BaseHero implements Person {
         if (allPowers.size() == 0) {
             System.out.println("[BASEHERO.getPowers()] Person Has No Powers."
                     + " This shouldn't be a thing.");
-            System.exit(0);
         }
               
         return allPowers;
