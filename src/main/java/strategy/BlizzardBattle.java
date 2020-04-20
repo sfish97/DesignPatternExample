@@ -21,7 +21,7 @@ public class BlizzardBattle implements Battles {
         int num = rand.nextInt((1 - 0) + 1) + 0;
         if (num == 0) {
             this.attacker1 = hero;
-            this.attacker2 = villain;7
+            this.attacker2 = villain;
         } else {
             this.attacker1 = villain;
             this.attacker2 = hero;
