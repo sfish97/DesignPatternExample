@@ -1,12 +1,7 @@
 package test.java;
 
-
-
-
 import static org.junit.Assert.assertEquals;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+
 import main.java.decorator.Air;
 import main.java.decorator.BaseHero;
 import main.java.decorator.BaseVillain;
@@ -20,6 +15,12 @@ import main.java.decorator.Water;
 import main.java.strategy.BattleDecider;
 import main.java.strategy.BlizzardBattle;
 import main.java.strategy.HeatwaveBattle;
+
+import org.junit.After;
+import org.junit.Before;
+
+import org.junit.Test;
+
 
 public class UnitTests {
     
@@ -39,6 +40,11 @@ public class UnitTests {
     Person metalVillian = new BaseVillain();  
     Person lavaVillian = new BaseVillain(); 
     
+    
+    /** Before a unit tests runs.
+     * 
+     * @throws Exception Any exception
+     */
     @Before
     public void setUp() throws Exception {
         //Initialize an array with all the powers

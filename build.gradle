@@ -1,5 +1,6 @@
 plugins {
   id "com.github.spotbugs" version "3.0.0"
+  id "checkstyle"
 }
 
 apply plugin: 'application'
@@ -25,34 +26,30 @@ test {
     }              
 }
 
-//Checkstyle setup//
-checkstyle{
-	toolVersion = '8.8'
-	ignoreFailures = true
-	showViolations = false
-	configFile file("config/checkstyle/checkstyle.xml")
-}
+//Checkstyle setup
+  checkstyle {
+    ignoreFailures = true
+    showViolations = false
+  }
 
-checkstyleMain{
-	source = 'main/java'
-}
-
-checkstyleTest{
-	source = 'test/java'
-}
-
-tasks.withType(Checkstyle) {
-	reports {
-    	html.enabled = true
-     	xml.enabled = false
+  tasks.withType(Checkstyle) {
+    reports {
+      html.enabled = true
+      xml.enabled = false
     }
-}
-
+  }
+  checkstyle {
+      toolVersion = "8.8"
+  }
+  
+  
+  
+//Spotbugs setup
 spotbugs{
 	ignoreFailures = true;
 }
 
-//Spotbugs setup
+
 tasks.withType(com.github.spotbugs.SpotBugsTask) {
 	reports {
     	xml.enabled = false
