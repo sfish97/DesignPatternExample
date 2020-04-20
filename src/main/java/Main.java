@@ -3,18 +3,18 @@ package main.java;
 import java.util.ArrayList;
 import java.util.Random;
 
-import main.java.DecoratorPattern.Air;
-import main.java.DecoratorPattern.BaseHero;
-import main.java.DecoratorPattern.BaseVillian;
-import main.java.DecoratorPattern.Earth;
-import main.java.DecoratorPattern.Fire;
-import main.java.DecoratorPattern.Lava;
-import main.java.DecoratorPattern.Lightning;
-import main.java.DecoratorPattern.Metal;
-import main.java.DecoratorPattern.Person;
-import main.java.DecoratorPattern.PowerInfo;
-import main.java.DecoratorPattern.Water;
-import main.java.StrategyPattern.BattleDecider;
+import main.java.decorator.Air;
+import main.java.decorator.BaseHero;
+import main.java.decorator.BaseVillian;
+import main.java.decorator.Earth;
+import main.java.decorator.Fire;
+import main.java.decorator.Lava;
+import main.java.decorator.Lightning;
+import main.java.decorator.Metal;
+import main.java.decorator.Person;
+import main.java.decorator.PowerInfo;
+import main.java.decorator.Water;
+import main.java.strategy.BattleDecider;
 
 public class Main {
       static String[]  city_names = {"Aberdeen", "Abilene", "Akron", "Albany", "Albuquerque", "Alexandria", "Allentown", "Amarillo", "Anaheim", "Anchorage", 

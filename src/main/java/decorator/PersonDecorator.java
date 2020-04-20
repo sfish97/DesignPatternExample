@@ -1,4 +1,4 @@
-package main.java.DecoratorPattern;
+package main.java.decorator;
 
 import java.util.ArrayList;
 

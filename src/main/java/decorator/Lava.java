@@ -1,19 +1,19 @@
-package main.java.DecoratorPattern;
+package main.java.decorator;
 
 import java.util.ArrayList;
 
-public class Water extends PersonDecorator {
+public class Lava extends PersonDecorator {
     
-    /**Constructor for Water Power.
+    /**Constructor for Lava Power.
      * 
      * @param c The person who gets the power
      */
-    public Water(Person c) {
+    public Lava(Person c) {
         super(c);
-        super.setPowerInfo("Water", 2);
+        super.setPowerInfo("Lava", 4);
         
     }
-
+        
     public ArrayList<PowerInfo> getPowersInfo() {
         return super.getPowersInfo();
     }

@@ -1,19 +1,19 @@
-package main.java.DecoratorPattern;
+package main.java.decorator;
 
 import java.util.ArrayList;
 
-public class Metal extends PersonDecorator {
+public class Fire extends PersonDecorator{
     
-    /**Constructor for Metal Power.
+    /**Constructor for Fire Power.
      * 
      * @param c The person who gets the power
      */
-    public Metal(Person c) {
+    public Fire(Person c) {
         super(c);
-        super.setPowerInfo("Metal", 3);
-        
+        super.setPowerInfo("Fire", 3);
+
     }
-        
+       
     public ArrayList<PowerInfo> getPowersInfo() {
         return super.getPowersInfo();
     }

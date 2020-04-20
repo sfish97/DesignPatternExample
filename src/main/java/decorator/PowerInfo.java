@@ -1,4 +1,4 @@
-package main.java.DecoratorPattern;
+package main.java.decorator;
 
 public class PowerInfo{
     private String power;

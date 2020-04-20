@@ -1,47 +1,51 @@
-package main.java.DecoratorPattern;
+package main.java.decorator;
 
 import java.util.ArrayList;
 
-public class BaseVillian implements Person {
+public class BaseHero implements Person {
     private ArrayList<PowerInfo> allPowers;
     private String personType;
     private double hitpoints;
     private String name;
     
-    /** Base constructor that doesnt give a name.
+    /** Base Constructor that doesnt give a unique hero name.
      * 
      */
-    public BaseVillian() {
+    public BaseHero() {
         this.allPowers = new ArrayList<>();
-        this.personType = "Villian";
+        this.personType = "Hero";
         this.hitpoints = 100;
     }
     
-    /** Constructor to give the villian a name based on the number.
+    /**Constructor that takes in a number and appends.
+     *  it to the Heroes name so each hero is unique
      * 
-     * @param villianNumber  The Number the villian gets
+     * @param heroNumber The Heros number
      */
-    public BaseVillian(int villianNumber) {
+    public BaseHero(int heroNumber) {
         this.allPowers = new ArrayList<>();
-        this.personType = "Villian";
+        this.personType = "Hero";
         this.hitpoints = 100;
-        this.name = "Villian" + villianNumber;
+        this.name = "Hero" + heroNumber;
     }
+    
+    
     
     @Override
     public ArrayList<PowerInfo> getPowersInfo() {
         if (allPowers.size() == 0) {
-            System.out.println("[BASEVILLIAN.getPowers()] Person Has No Powers. "
-                    + "This shouldn't be a thing.");
+            System.out.println("[BASEHERO.getPowers()] Person Has No Powers."
+                    + " This shouldn't be a thing.");
             System.exit(0);
         }
               
         return allPowers;
     }
 
+
+
     @Override
     public void setPowerInfo(String string, int level) {
-        
         //Look to see if the person contains the power already. If so, add the level
         for (int iter = 0; iter < allPowers.size(); iter++) {
             PowerInfo temp = allPowers.get(iter);
@@ -52,14 +56,18 @@ public class BaseVillian implements Person {
         }
         
         
-        allPowers.add(new PowerInfo(string, level));      
+        allPowers.add(new PowerInfo(string, level));
+        
     }
     
     @Override
     public String getPersonType() {
         return this.personType;
     }
-    
+
+
+
+
     @Override
     public void damagePerson(double value) {
         this.hitpoints -= value;
@@ -71,10 +79,12 @@ public class BaseVillian implements Person {
     public double getHitpoints() {
         return this.hitpoints;
     }
-    
+
     @Override
     public String getName() {
         return name;
     }
-
+    
+    
+    
 }

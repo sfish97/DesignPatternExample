@@ -1,21 +1,20 @@
-package main.java.DecoratorPattern;
+package main.java.decorator;
 
 import java.util.ArrayList;
 
-public class Air extends PersonDecorator {
+public class Lightning extends PersonDecorator {
     
-    /**Constructor for Air Power.
+    /**Constructor for Lightning Power.
      * 
      * @param c The person who gets the power
      */
-    public Air(Person c) {
+    public Lightning(Person c) {
         super(c);
-        super.setPowerInfo("Air", 2);
+        super.setPowerInfo("Lightning", 4);
         
     }
         
     public ArrayList<PowerInfo> getPowersInfo() {
         return super.getPowersInfo();
     }
-
 }

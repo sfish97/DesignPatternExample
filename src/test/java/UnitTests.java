@@ -11,19 +11,19 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import main.java.DecoratorPattern.Air;
-import main.java.DecoratorPattern.BaseHero;
-import main.java.DecoratorPattern.BaseVillian;
-import main.java.DecoratorPattern.Earth;
-import main.java.DecoratorPattern.Fire;
-import main.java.DecoratorPattern.Lava;
-import main.java.DecoratorPattern.Lightning;
-import main.java.DecoratorPattern.Metal;
-import main.java.DecoratorPattern.Person;
-import main.java.DecoratorPattern.Water;
-import main.java.StrategyPattern.BattleDecider;
-import main.java.StrategyPattern.BlizzardBattle;
-import main.java.StrategyPattern.HeatwaveBattle;
+import main.java.decorator.Air;
+import main.java.decorator.BaseHero;
+import main.java.decorator.BaseVillian;
+import main.java.decorator.Earth;
+import main.java.decorator.Fire;
+import main.java.decorator.Lava;
+import main.java.decorator.Lightning;
+import main.java.decorator.Metal;
+import main.java.decorator.Person;
+import main.java.decorator.Water;
+import main.java.strategy.BattleDecider;
+import main.java.strategy.BlizzardBattle;
+import main.java.strategy.HeatwaveBattle;
 
 public class UnitTests {
     
