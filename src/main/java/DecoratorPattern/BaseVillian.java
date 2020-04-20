@@ -8,12 +8,19 @@ public class BaseVillian implements Person {
     private double hitpoints;
     private String name;
     
+    /** Base constructor that doesnt give a name.
+     * 
+     */
     public BaseVillian() {
         this.allPowers = new ArrayList<>();
         this.personType = "Villian";
         this.hitpoints = 100;
     }
     
+    /** Constructor to give the villian a name based on the number.
+     * 
+     * @param villianNumber  The Number the villian gets
+     */
     public BaseVillian(int villianNumber) {
         this.allPowers = new ArrayList<>();
         this.personType = "Villian";
@@ -23,8 +30,9 @@ public class BaseVillian implements Person {
     
     @Override
     public ArrayList<PowerInfo> getPowersInfo() {
-        if(allPowers.size() == 0) {
-            System.out.println( "[BASEVILLIAN.getPowers()] Person Has No Powers. This shouldn't be a thing.");
+        if (allPowers.size() == 0) {
+            System.out.println("[BASEVILLIAN.getPowers()] Person Has No Powers. "
+                    + "This shouldn't be a thing.");
             System.exit(0);
         }
               
@@ -35,9 +43,9 @@ public class BaseVillian implements Person {
     public void setPowerInfo(String string, int level) {
         
         //Look to see if the person contains the power already. If so, add the level
-        for(int iter = 0; iter < allPowers.size(); iter++) {
+        for (int iter = 0; iter < allPowers.size(); iter++) {
             PowerInfo temp = allPowers.get(iter);
-            if(temp.getPower().equals(string)) {
+            if (temp.getPower().equals(string)) {
                 temp.addLevel(level);
                 return;
             }

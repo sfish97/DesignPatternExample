@@ -8,12 +8,20 @@ public class BaseHero implements Person {
     private double hitpoints;
     private String name;
     
+    /** Base Constructor that doesnt give a unique hero name.
+     * 
+     */
     public BaseHero() {
         this.allPowers = new ArrayList<>();
         this.personType = "Hero";
         this.hitpoints = 100;
     }
     
+    /**Constructor that takes in a number and appends.
+     *  it to the Heroes name so each hero is unique
+     * 
+     * @param heroNumber The Heros number
+     */
     public BaseHero(int heroNumber) {
         this.allPowers = new ArrayList<>();
         this.personType = "Hero";
@@ -25,8 +33,9 @@ public class BaseHero implements Person {
     
     @Override
     public ArrayList<PowerInfo> getPowersInfo() {
-        if(allPowers.size() == 0) {
-            System.out.println( "[BASEHERO.getPowers()] Person Has No Powers. This shouldn't be a thing.");
+        if (allPowers.size() == 0) {
+            System.out.println("[BASEHERO.getPowers()] Person Has No Powers."
+                    + " This shouldn't be a thing.");
             System.exit(0);
         }
               
@@ -38,9 +47,9 @@ public class BaseHero implements Person {
     @Override
     public void setPowerInfo(String string, int level) {
         //Look to see if the person contains the power already. If so, add the level
-        for(int iter = 0; iter < allPowers.size(); iter++) {
+        for (int iter = 0; iter < allPowers.size(); iter++) {
             PowerInfo temp = allPowers.get(iter);
-            if(temp.getPower().equals(string)) {
+            if (temp.getPower().equals(string)) {
                 temp.addLevel(level);
                 return;
             }
