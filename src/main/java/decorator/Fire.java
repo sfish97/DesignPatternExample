@@ -2,7 +2,7 @@ package main.java.decorator;
 
 import java.util.ArrayList;
 
-public class Fire extends PersonDecorator{
+public class Fire extends PersonDecorator {
     
     /**Constructor for Fire Power.
      * 

@@ -7,6 +7,7 @@ public class BaseVillian implements Person {
     private String personType;
     private double hitpoints;
     private String name;
+    private boolean isResting;
     
     /** Base constructor that doesnt give a name.
      * 
@@ -15,6 +16,7 @@ public class BaseVillian implements Person {
         this.allPowers = new ArrayList<>();
         this.personType = "Villian";
         this.hitpoints = 100;
+        this.isResting = false;
     }
     
     /** Constructor to give the villian a name based on the number.
@@ -26,6 +28,7 @@ public class BaseVillian implements Person {
         this.personType = "Villian";
         this.hitpoints = 100;
         this.name = "Villian" + villianNumber;
+        this.isResting = false;
     }
     
     @Override
@@ -74,7 +77,25 @@ public class BaseVillian implements Person {
     
     @Override
     public String getName() {
-        return name;
+        return this.name;
+    }
+
+    @Override
+    public void setIsResting() {
+        this.isResting = !this.isResting;
+        
+    }
+
+    @Override
+    public boolean getIsResting() {
+        // TODO Auto-generated method stub
+        return this.isResting;
+    }
+
+    @Override
+    public void resetHitpoints() {
+        this.hitpoints = 100.0;
+        
     }
 
 }

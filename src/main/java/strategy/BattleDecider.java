@@ -18,7 +18,7 @@ public class BattleDecider {
     public BattleDecider(Person hero, Person villian) {
         this.hero = hero;
         this.villian = villian;
-        
+
         chooseRandomBattle();
     }
     
@@ -47,7 +47,31 @@ public class BattleDecider {
      * @return The winner of the fight
      */
     public Person initBattle() {
-        Person winner = fight.battle();
+        Person winner;
+        
+        //Checks if the hero/villian is resting
+        // If their both resting, the hero wins
+        if (hero.getIsResting() && !villian.getIsResting()) {
+            winner = villian;
+            
+            System.out.println(villian.getName() + " ATTACKED " + hero.getName() 
+                                + " WHILE HE WAS RESTING! THE HERO WAS KILLED INSTANTLY");
+            
+        } else if (!hero.getIsResting() && villian.getIsResting()) {
+            winner = hero;
+            
+            System.out.println(hero.getName() + " ATTACKED " + villian.getName() 
+                                + " WHILE HE WAS RESTING! THE VILLIAN HAS BEEN ELIMINATED");
+            
+        } else if (hero.getIsResting() && villian.getIsResting()) {
+            winner = hero;
+            
+            System.out.println(hero.getName() + " AND " + villian.getName() + " WERE BOTH RESTING "
+                                + "IN THE PARK UNTIL THEY STUMBLED UPON EACH OTHER! "
+                                + "THE HERO TOOK THE UPPER HAND AND DEFEATED THE VILLIAN");
+        } else {
+            winner = fight.battle();
+        }
         
         //Winner gets the defeated powers
         if (winner == hero) {
@@ -56,12 +80,14 @@ public class BattleDecider {
                 winner.setPowerInfo(pi.getPower(), pi.getLevel());
             }
             
+            winner.setIsResting();  //The winner starts resting
             return winner;
         } else {
             for (PowerInfo pi : hero.getPowersInfo()) {
                 winner.setPowerInfo(pi.getPower(), pi.getLevel());
             }
-          
+            
+            winner.setIsResting(); //The winner start resting
             return winner;
         }
 

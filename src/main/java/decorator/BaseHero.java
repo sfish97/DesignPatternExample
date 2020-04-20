@@ -7,6 +7,7 @@ public class BaseHero implements Person {
     private String personType;
     private double hitpoints;
     private String name;
+    private boolean isResting;
     
     /** Base Constructor that doesnt give a unique hero name.
      * 
@@ -15,6 +16,7 @@ public class BaseHero implements Person {
         this.allPowers = new ArrayList<>();
         this.personType = "Hero";
         this.hitpoints = 100;
+        this.isResting = false;
     }
     
     /**Constructor that takes in a number and appends.
@@ -27,6 +29,7 @@ public class BaseHero implements Person {
         this.personType = "Hero";
         this.hitpoints = 100;
         this.name = "Hero" + heroNumber;
+        this.isResting = false;
     }
     
     
@@ -82,7 +85,25 @@ public class BaseHero implements Person {
 
     @Override
     public String getName() {
-        return name;
+        return this.name;
+    }
+
+    @Override
+    public void setIsResting() {
+        this.isResting = !this.isResting;
+        
+    }
+
+    @Override
+    public boolean getIsResting() {
+        // TODO Auto-generated method stub
+        return this.isResting;
+    }
+
+    @Override
+    public void resetHitpoints() {
+        this.hitpoints =100.0;
+        
     }
     
     

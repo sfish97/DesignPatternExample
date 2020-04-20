@@ -13,6 +13,11 @@ public interface Person {
     
     public double getHitpoints();
     
+    public void resetHitpoints();
+    
     public String getName();
     
+    public void setIsResting();
+    
+    public boolean getIsResting();
 }

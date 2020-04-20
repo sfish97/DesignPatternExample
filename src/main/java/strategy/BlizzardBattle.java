@@ -62,9 +62,9 @@ public class BlizzardBattle implements Battles {
             damage = getDamageAmount(attacker1Level);
             attacker2.damagePerson(damage);
             
-            //System.out.println(attacker1.getName() + " hit " + attacker2.getName() + " for " 
-            //                    + damage + " hitpoints!" + attacker2.getName() + " HAS " 
-            //                    + attacker2.getHitpoints() + " LEFT!");
+//            System.out.println(attacker1.getName() + " hit " + attacker2.getName() + " for " 
+//                                + damage + " hitpoints!" + attacker2.getName() + " HAS " 
+//                                + attacker2.getHitpoints() + " LEFT!");
             
             winner = checkWinner(2);
             if (winner) {
@@ -79,9 +79,9 @@ public class BlizzardBattle implements Battles {
             damage = getDamageAmount(attacker2Level);
             
             attacker1.damagePerson(damage);
-            //System.out.println(attacker2.getName() + " hit " + attacker1.getName() 
-            //                  + " for " + damage + " hitpoints!" + attacker1.getName()
-            //                  + " HAS " + attacker1.getHitpoints() + " LEFT!");
+//            System.out.println(attacker2.getName() + " hit " + attacker1.getName() 
+//                              + " for " + damage + " hitpoints!" + attacker1.getName()
+//                              + " HAS " + attacker1.getHitpoints() + " LEFT!");
             
             winner = checkWinner(1);
             if (winner) {

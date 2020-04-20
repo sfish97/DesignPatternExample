@@ -17,49 +17,13 @@ import main.java.decorator.Water;
 import main.java.strategy.BattleDecider;
 
 public class Main {
-      static String[]  city_names = {"Aberdeen", "Abilene", "Akron", "Albany", "Albuquerque", "Alexandria", "Allentown", "Amarillo", "Anaheim", "Anchorage", 
-                      "Ann Arbor", "Antioch", "Apple Valley", "Appleton", "Arlington", "Arvada", "Asheville", "Athens", "Atlanta", "Atlantic City", 
-                      "Augusta", "Aurora", "Austin", "Bakersfield", "Baltimore", "Barnstable", "Baton Rouge", "Beaumont", "Bel Air", "Bellevue", 
-                      "Berkeley", "Bethlehem", "Billings", "Birmingham", "Bloomington", "Boise", "Boise City", "Bonita Springs", "Boston", "Boulder", 
-                      "Bradenton", "Bremerton", "Bridgeport", "Brighton", "Brownsville", "Bryan", "Buffalo", "Burbank", "Burlington", "Cambridge", 
-                      "Canton", "Cape Coral", "Carrollton", "Cary", "Cathedral City", "Cedar Rapids", "Champaign", "Chandler", "Charleston", "Charlotte",
-                      "Chattanooga", "Chesapeake", "Chicago", "Chula Vista", "Cincinnati", "Clarke County", "Clarksville", "Clearwater", "Cleveland", "College Station", 
-                      "Colorado Springs", "Columbia", "Columbus", "Concord", "Coral Springs", "Corona", "Corpus Christi", "Costa Mesa", "Dallas", "Daly City", "Danbury", 
-                      "Davenport", "Davidson County", "Dayton", "Daytona Beach", "Deltona", "Denton", "Denver", "Des Moines", "Detroit", "Downey", "Duluth", "Durham", 
-                      "El Monte", "El Paso", "Elizabeth", "Elk Grove", "Elkhart", "Erie", "Escondido", "Eugene", "Evansville", "Fairfield", "Fargo", "Fayetteville", 
-                      "Fitchburg", "Flint", "Fontana", "Fort Collins", "Fort Lauderdale", "Fort Smith", "Fort Walton Beach", "Fort Wayne", "Fort Worth", "Frederick", 
-                      "Fremont", "Fresno", "Fullerton", "Gainesville", "Garden Grove", "Garland", "Gastonia", "Gilbert", "Glendale", "Grand Prairie", "Grand Rapids", 
-                      "Grayslake", "Green Bay", "GreenBay", "Greensboro", "Greenville", "Gulfport-Biloxi", "Hagerstown", "Hampton", "Harlingen", "Harrisburg", "Hartford",
-                      "Havre de Grace", "Hayward", "Hemet", "Henderson", "Hesperia", "Hialeah", "Hickory", "High Point", "Hollywood", "Honolulu", "Houma", "Houston", 
-                      "Howell", "Huntington", "Huntington Beach", "Huntsville", "Independence", "Indianapolis", "Inglewood", "Irvine", "Irving", "Jackson", "Jacksonville", 
-                      "Jefferson", "Jersey City", "Johnson City", "Joliet", "Kailua", "Kalamazoo", "Kaneohe", "Kansas City", "Kennewick", "Kenosha", "Killeen", "Kissimmee", 
-                      "Knoxville", "Lacey", "Lafayette", "Lake Charles", "Lakeland", "Lakewood", "Lancaster", "Lansing", "Laredo", "Las Cruces", "Las Vegas", "Layton", 
-                      "Leominster", "Lewisville", "Lexington", "Lincoln", "Little Rock", "Long Beach", "Lorain", "Los Angeles", "Louisville", "Lowell", "Lubbock", "Macon", 
-                      "Madison", "Manchester", "Marina", "Marysville", "McAllen", "McHenry", "Medford", "Melbourne", "Memphis", "Merced", "Mesa", "Mesquite", "Miami", 
-                      "Milwaukee", "Minneapolis", "Miramar", "Mission Viejo", "Mobile", "Modesto", "Monroe", "Monterey", "Montgomery", "Moreno Valley", "Murfreesboro", 
-                      "Murrieta", "Muskegon", "Myrtle Beach", "Naperville", "Naples", "Nashua", "Nashville", "New Bedford", "New Haven", "New London", "New Orleans",
-                      "New York", "New York City", "Newark", "Newburgh", "Newport News", "Norfolk", "Normal", "Norman", "North Charleston", "North Las Vegas", "North Port",
-                      "Norwalk", "Norwich", "Oakland", "Ocala", "Oceanside", "Odessa", "Ogden", "Oklahoma City", "Olathe", "Olympia", "Omaha", "Ontario", "Orange", "Orem",
-                      "Orlando", "Overland Park", "Oxnard", "Palm Bay", "Palm Springs", "Palmdale", "Panama City", "Pasadena", "Paterson", "Pembroke Pines", "Pensacola", 
-                      "Peoria", "Philadelphia", "Phoenix", "Pittsburgh", "Plano", "Pomona", "Pompano Beach", "Port Arthur", "Port Orange", "Port Saint Lucie", "Port St. Lucie",
-                      "Portland", "Portsmouth", "Poughkeepsie", "Providence", "Provo", "Pueblo", "Punta Gorda", "Racine", "Raleigh", "Rancho Cucamonga", "Reading", "Redding",
-                      "Reno", "Richland", "Richmond", "Richmond County", "Riverside", "Roanoke", "Rochester", "Rockford", "Roseville", "Round Lake Beach", "Sacramento", "Saginaw",
-                      "Saint Louis", "Saint Paul", "Saint Petersburg", "Salem", "Salinas", "Salt Lake City", "San Antonio", "San Bernardino", "San Buenaventura", "San Diego",
-                      "San Francisco", "San Jose", "Santa Ana", "Santa Barbara", "Santa Clara", "Santa Clarita", "Santa Cruz", "Santa Maria", "Santa Rosa", "Sarasota", "Savannah", 
-                      "Scottsdale", "Scranton", "Seaside", "Seattle", "Sebastian", "Shreveport", "Simi Valley", "Sioux City", "Sioux Falls", "South Bend", "South Lyon", "Spartanburg",
-                      "Spokane", "Springdale", "Springfield", "St. Louis", "St. Paul", "St. Petersburg", "Stamford", "Sterling Heights", "Stockton", "Sunnyvale", "Syracuse", 
-                      "Tacoma", "Tallahassee", "Tampa", "Temecula", "Tempe", "Thornton", "Thousand Oaks", "Toledo", "Topeka", "Torrance", "Trenton", "Tucson", "Tulsa", "Tuscaloosa",
-                      "Tyler", "Utica", "Vallejo", "Vancouver", "Vero Beach", "Victorville", "Virginia Beach", "Visalia", "Waco", "Warren", "Washington", "Waterbury", "Waterloo",
-                      "West Covina", "West Valley City", "Westminster", "Wichita", "Wilmington", "Winston", "Winter Haven", "Worcester", "Yakima", "Yonkers", "York", "Youngstown"};
-      
-    static ArrayList<String> allCities = new ArrayList<>();
-      
+   
     static String[] powers = {"Water", "Fire", "Earth", "Air", "Lightning", "Metal", "Lava"};
     static ArrayList<Person> allPersons = new ArrayList<>();
     static ArrayList<Person> allHeroes = new ArrayList<>();
     static ArrayList<Person> allVillians = new ArrayList<>();
-    
-      
+    static int heroValue = 1;
+    static int villianValue = 1;
       
     /** Initialize the game world by created a random number of
      *  heroes and villians. Then give each hero/villian 1 Random Power
@@ -68,10 +32,7 @@ public class Main {
     public static void gameInitialize() {
         //Tick based: Initialize the world then: 
         Random rand = new Random();
-          
-        int heroValue = 1;
-        int villianValue = 1;
-        
+
         for (int x = 0; x < 20; x++) {
             Person h;
               
@@ -86,7 +47,7 @@ public class Main {
                 allVillians.add(h);
             }
               
-            //Get the index of powers 2
+            //Get a random index from the array of powers to give to the hero/villian
             int index = rand.nextInt(((powers.length - 1)) + 1);
               
             if (powers[index].equals("Water")) {
@@ -106,7 +67,7 @@ public class Main {
             }
               
             allPersons.add(h);
-              
+            
         }
           
         System.out.println("The World Has Been Initialized Randomly.");
@@ -131,38 +92,195 @@ public class Main {
     public static void battle() {
         Random rand = new Random();
         int day = 1;
-          
+        int daysUntilEvoulution = 5;
+        int timeEvoulutionHappened = 1;
+        
         while (allHeroes.size() != 0 || allVillians.size() != 0) {
+            System.out.println("\nDay " + day);
+            
+            //If Harmonic Evoulution is here, create new heroes and villians
+            if (daysUntilEvoulution == 0) {
+                System.out.println("HARMONIC EVOULUTION IS HERE.");
+                
+                harmonicEvoulution();
+                
+                day++;          
+                timeEvoulutionHappened++;      
+                daysUntilEvoulution = 5 * timeEvoulutionHappened;
+                continue;
+            }
+            
+            
+            //Select a hero and villian. Will try 5 times to get a pair where both are NOT RESTING
+            // On the last try, it will just grab whoever and put them up against each other.
             int getHero;
             int getVillian;
-              
-            System.out.println("\nDay " + day);
+            Person hero = selectPerson(0);
+            Person villian = selectPerson(1);
 
-            getHero = rand.nextInt(((allHeroes.size() - 1)) + 1);
-            getVillian = rand.nextInt(((allVillians.size() - 1)) + 1);
-            
-            Person hero = allHeroes.get(getHero);
-            Person villian = allVillians.get(getVillian);
           
+            //Have the two battle it out
             BattleDecider test = new BattleDecider(hero, villian);
             Person winner = test.initBattle();
-    
+            
+            //Check who the winner is and remove the loser
             if (winner == hero) {            
                 allVillians.remove(villian);
             } else {              
                 allHeroes.remove(hero);
             }
               
+            //Check if all heroes/villians have been defeated
             if (allHeroes.size() == 0 || allVillians.size() == 0) {
                 break;
             }
             
-            day++;
+            //Every 4 days, heal the resting
+            if(day % 4 == 0) {
+                healRested();
+            }
             
+            //Increase the Day and decrease the days until Evoulution
+            day++;
+            daysUntilEvoulution--;
         } 
     
     }
       
+    public static Person selectPerson(int indicator) {
+        Random rand = new Random();
+        
+        Person person = null;
+        int index;
+        
+        for (int tries = 0; tries < 4; tries++) {
+            
+            if (indicator == 0) {
+                index = rand.nextInt(((allHeroes.size() - 1)) + 1);   
+                
+                //If its on the last try to match a hero and villian, then make them fight
+                if (tries == 3) {
+                    return allHeroes.get(index);
+                }
+                
+                person = allHeroes.get(index);
+                
+                if (person.getIsResting()) {
+                    person = null;
+                    continue;
+                }
+        
+                return person;
+                
+            } else {
+                index = rand.nextInt(((allVillians.size() - 1)) + 1);   
+                
+                //If its on the last try to match a hero and villian, then make them fight
+                if (tries == 3) {
+                    return allVillians.get(index); 
+                }
+                
+                person = allVillians.get(index);
+                
+                if (person.getIsResting()) {
+                    person = null;
+                    continue;
+                }
+        
+                return person;
+            }
+        }
+        
+        return person;
+    }
+    
+    public static void healRested() {
+        
+        for (Person p : allPersons) {
+            if(p.getIsResting()) {
+                p.resetHitpoints();
+                p.setIsResting();
+            }
+        }
+        
+    }
+    
+    /** Harmonic Evoulution is a way new Heroes and Villians appear
+     *  As of now, random amount of people become Heroes and get a base power
+     *  Random amount of Villians are made but their a direct clone
+     *  of a random villian. Each new villian will inherit all powers 
+     *  of the "parent" but the power level will be at base level.
+     * 
+     */
+    public static void harmonicEvoulution() {
+        Random rand = new Random();
+        
+        //Select a random number of new heroes from 5-10
+        int amount = rand.nextInt((10 - 5) + 1) + 5;
+        
+        System.out.println(amount + " NEW HEROES HAVE JOINED THE FIGHT AGAINST THE VILLIANS");
+        
+        for (int iter = 0; iter < amount; iter++) {
+            Person newHero = new BaseHero(heroValue++);
+            
+            //Select a random power for the Hero
+            int index = rand.nextInt(((powers.length - 1)) + 1);
+            
+            if (powers[index].equals("Water")) {
+                newHero = new Water(newHero);       
+            } else if (powers[index].equals("Fire")) {
+                newHero = new Fire(newHero);  
+            } else if (powers[index].equals("Earth")) {
+                newHero = new Earth(newHero);
+            } else if (powers[index].equals("Air")) {
+                newHero = new Air(newHero);
+            } else if (powers[index].equals("Metal")) {
+                newHero = new Metal(newHero);  
+            } else if (powers[index].equals("Lightning")) {
+                newHero = new Lightning(newHero);
+            } else if (powers[index].equals("Lava")) {
+                newHero = new Lava(newHero);
+            }
+              
+            allHeroes.add(newHero);
+            allPersons.add(newHero);
+        }
+        
+        //Select a random number of villians to create from 5-10
+        amount = rand.nextInt((10 - 5) + 1) + 5;
+        System.out.println(amount + " NEW VILLIAN HAVE JOINED THE FIGHT TO DEFEAT THE HEROES");
+        
+        //For every new villian, grab a random villian inside the ArrayList and copy all 
+        // its powers, but each power starts at base level
+        for (int iter = 0; iter < amount; iter++) {
+            Person newVillian = new BaseVillian(villianValue++);
+            
+            int index = rand.nextInt(((allVillians.size() - 1)) + 1);
+            
+            for (PowerInfo pi : allVillians.get(index).getPowersInfo()) {
+                if (pi.getPower().equals("Water")) {
+                    newVillian = new Water(newVillian);       
+                } else if (pi.getPower().equals("Fire")) {
+                    newVillian = new Fire(newVillian);  
+                } else if (pi.getPower().equals("Earth")) {
+                    newVillian = new Earth(newVillian);
+                } else if (pi.getPower().equals("Air")) {
+                    newVillian = new Air(newVillian);
+                } else if (pi.getPower().equals("Metal")) {
+                    newVillian = new Metal(newVillian);  
+                } else if (pi.getPower().equals("Lightning")) {
+                    newVillian = new Lightning(newVillian);
+                } else if (pi.getPower().equals("Lava")) {
+                    newVillian = new Lava(newVillian);
+                }
+            }
+            
+            allVillians.add(newVillian);
+            allPersons.add(newVillian);
+    
+        }
+        
+    }
     
     /** Print out who won. Either the Heroes for a New Age of Light
      *  Or the Villians, who bring a New Age of Darkness
@@ -188,6 +306,8 @@ public class Main {
     * @param args If any arugments get passed
     */
     public static void main(String[] args) {
+        
+        
         gameInitialize();
         battle();
         printWinner();

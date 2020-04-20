@@ -40,6 +40,24 @@ public class PersonDecorator implements Person {
     public String getName() {
         return person.getName();
     }
+
+    @Override
+    public void setIsResting() {
+        // TODO Auto-generated method stub
+        person.setIsResting();
+    }
+
+    @Override
+    public boolean getIsResting() {
+        // TODO Auto-generated method stub
+        return person.getIsResting();
+    }
+
+    @Override
+    public void resetHitpoints() {
+        person.resetHitpoints();
+        
+    }
     
 }
 
