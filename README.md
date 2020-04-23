@@ -1,10 +1,20 @@
 # Assign6DesignPattern
 
-Design Patterns I'll most likly be using will be the Decorator pattern, and Strategy pattern.
+For this project, I used the Decorator and Strategy Patterns
 
-For the Decorator pattern, I'll be using it to give villains and heroes thier powers. My plan right now is to have each
-hero/villains have a body type that will either give increases or decreases in certain abilites. Then give each of them 1
-superpower ability each.
+For the Decorator pattern the requirements I fulfilled were
+- Each hero/villain gets has powers
+- Heroes are created based on a random event that occurs
+- Heroes rest after a battle
+- New Villains are clones and get the powers of their "parent". Instead of keeping the levels of each power,
+I reset them back to their original base level.
 
-With the strategy pattern, I can create multiple types of battle algortihms with possible weather conditions, they type 
-of land the battle is happening, and other factors that can weaken or strengthen abilites. 
+For the Strategy Pattern:
+- Villains and Heroes battle each other when they run into each other
+- Different strategies are used. Based on what battle it is, both the hero and villains individual power is
+increased or decreased.
+- The winner gets the losers power
+- If the person defeated has a power the winner has, that power level is increased.
+
+Lastly, this project is based on the TV series, Avatar: The Last Airbender. The timing of me re-watching the series
+lined up with this project. So I thought this is a cool way to express how much I love the show. 
