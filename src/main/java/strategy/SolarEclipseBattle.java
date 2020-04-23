@@ -49,7 +49,8 @@ public class SolarEclipseBattle implements Battles {
         
         System.out.println("\n------  BATTLE BETWEEN " + attacker1.getName() + " AND " 
                             + attacker2.getName() + " DURING A SOLAR ECLIPSE!"
-                                    + " WITH THE MOON BEHIND THE SUN, EVERYONES POWER DRAINS! ------");
+                                    + " WITH THE MOON BEHIND THE SUN, "
+                                    + "EVERYONES POWER DRAINS! ------");
         System.out.println(attacker1.getName() + " PowerInfo");
         
         for (PowerInfo pi : attacker1.getPowersInfo()) {

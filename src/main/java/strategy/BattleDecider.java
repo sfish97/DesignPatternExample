@@ -32,7 +32,7 @@ public class BattleDecider {
         
         if (num == 0) {
             setBattle(new BlizzardBattle(hero, villain));
-        } else if(num == 1) {
+        } else if (num == 1) {
             setBattle(new HeatwaveBattle(hero, villain));
         } else {
             setBattle(new SolarEclipseBattle(hero, villain));
