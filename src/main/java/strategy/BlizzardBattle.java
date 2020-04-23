@@ -10,6 +10,11 @@ public class BlizzardBattle implements Battles {
     private Person attacker1;
     private Person attacker2;
     
+    /** Empty constructor.
+     * 
+     */
+    public BlizzardBattle() {}
+    
     /** The Hero and Villain fight in a Blizzard.
      * 
      * @param hero      The hero

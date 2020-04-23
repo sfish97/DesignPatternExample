@@ -10,6 +10,11 @@ public class HeatwaveBattle implements Battles {
     private Person attacker1;
     private Person attacker2;
     
+    /** Empty constructor.
+     * 
+     */
+    public HeatwaveBattle() {}
+    
     /** The Hero and Villain fight in a Heatwave.
      * 
      * @param hero      The hero
@@ -140,7 +145,7 @@ public class HeatwaveBattle implements Battles {
             } else if (powerName.equals("Metal")) {        //Metal Level is diminished
                 level += iter.getLevel() / 2;
             } else if (powerName.equals("Lava")) {         //Lava Level stays the same
-                level += iter.getLevel();;
+                level += iter.getLevel();
             } else if (powerName.equals("Lightning")) {    //Lightning Power is slightly diminshed 
                 level += iter.getLevel() / 4;
             }

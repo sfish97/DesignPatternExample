@@ -147,5 +147,31 @@ public class UnitTests {
         assertEquals(6, winner2.getPowersInfo().get(0).getLevel());     
     }
     
+    @Test
+    public void testGetAttackerLevelBlizzard() {
+        BlizzardBattle temp = new BlizzardBattle();
+        
+        assertEquals(4, temp.getAttackersLevel(waterHero));     
+        assertEquals(2, temp.getAttackersLevel(earthHero)); 
+        assertEquals(1, temp.getAttackersLevel(fireHero));
+        assertEquals(5, temp.getAttackersLevel(airHero));
+        assertEquals(3, temp.getAttackersLevel(metalHero));
+        assertEquals(2, temp.getAttackersLevel(lavaHero));
+        assertEquals(4, temp.getAttackersLevel(lightningHero));
+    }
+    
+    @Test
+    public void testGetAttackerLevelHeatwave() {
+        HeatwaveBattle temp = new HeatwaveBattle();
+        
+        assertEquals(1, temp.getAttackersLevel(waterHero));     
+        assertEquals(1, temp.getAttackersLevel(earthHero)); 
+        assertEquals(6, temp.getAttackersLevel(fireHero));
+        assertEquals(2, temp.getAttackersLevel(airHero));
+        assertEquals(1, temp.getAttackersLevel(metalHero));
+        assertEquals(4, temp.getAttackersLevel(lavaHero));
+        assertEquals(1, temp.getAttackersLevel(lightningHero));
+    }
+    
      
 }

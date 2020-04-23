@@ -148,8 +148,8 @@ public class Main {
     
     /** Select a random hero or villain. 
      * It will select a Person and check if they are resting or not
-     * It will try 5 times to select a Person, and if every chosen person
-     * is resting, the last person selected will be picked. 
+     * It will try 5 times to select a Person, and if the last person
+     * is resting, the last person selected will be picked, and will lose 
      * 
      * @param indicator Either a hero or villain
      * @return  The Person
@@ -162,6 +162,7 @@ public class Main {
         
         for (int tries = 0; tries < 4; tries++) {
             
+            //Loop through the heroes list
             if (indicator == 0) {
                 index = rand.nextInt(((allHeroes.size() - 1)) + 1);   
                 
@@ -179,6 +180,7 @@ public class Main {
         
                 return person;
                 
+            //Loop through the Villians list
             } else {
                 index = rand.nextInt(((allVillians.size() - 1)) + 1);   
                 
@@ -208,8 +210,8 @@ public class Main {
         
         for (Person p : allPersons) {
             if (p.getIsResting()) {
-                p.resetHitpoints();
-                p.setIsResting();
+                p.resetHitpoints();     //Put hitpoints back to 100
+                p.setIsResting();       //Flip the boolean
             }
         }
         
