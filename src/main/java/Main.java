@@ -91,7 +91,7 @@ public class Main {
      */
     public static void battle() {
         int day = 1;
-        int daysUntilEvoulution = 5;
+        int daysUntilEvoulution = 3;
         int timeEvoulutionHappened = 1;
         
         while (allHeroes.size() != 0 || allVillians.size() != 0) {
@@ -105,13 +105,12 @@ public class Main {
                 
                 day++;          
                 timeEvoulutionHappened++;      
-                daysUntilEvoulution = 5 * timeEvoulutionHappened;
+                daysUntilEvoulution = 3 * timeEvoulutionHappened;
                 continue;
             }
             
             
-            //Select a hero and villian. Will try 5 times to get a pair where both are NOT RESTING
-            // On the last try, it will just grab whoever and put them up against each other.
+            //Select a hero and villian.
             int getHero;
             int getVillian;
             Person hero = selectPerson(0);
