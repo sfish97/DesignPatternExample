@@ -15,6 +15,7 @@ import main.java.decorator.Water;
 import main.java.strategy.BattleDecider;
 import main.java.strategy.BlizzardBattle;
 import main.java.strategy.HeatwaveBattle;
+import main.java.strategy.SolarEclipseBattle;
 
 import org.junit.After;
 import org.junit.Before;
@@ -137,14 +138,20 @@ public class UnitTests {
         BattleDecider decider2 = new BattleDecider(fireHero, fireVillian);
         decider2.setBattle(new HeatwaveBattle(fireHero, fireVillian));
         
+        BattleDecider decider3 = new BattleDecider(airHero, airVillian);
+        decider3.setBattle(new SolarEclipseBattle(airHero, airVillian));
+        
         Person winner1 = decider1.initBattle();
         Person winner2 = decider2.initBattle();
+        Person winner3 = decider3.initBattle();
         
         //Combining 2 base Water Level should give 4
         assertEquals(4, winner1.getPowersInfo().get(0).getLevel());
         
         //Combining 2 base Fire Levels should give 6
-        assertEquals(6, winner2.getPowersInfo().get(0).getLevel());     
+        assertEquals(6, winner2.getPowersInfo().get(0).getLevel());
+        
+        assertEquals(4, winner3.getPowersInfo().get(0).getLevel());  
     }
     
     @Test
@@ -170,6 +177,19 @@ public class UnitTests {
         assertEquals(2, temp.getAttackersLevel(airHero));
         assertEquals(1, temp.getAttackersLevel(metalHero));
         assertEquals(4, temp.getAttackersLevel(lavaHero));
+        assertEquals(1, temp.getAttackersLevel(lightningHero));
+    }
+    
+    @Test
+    public void testGetAttackerLevelSolar() {
+        SolarEclipseBattle temp = new SolarEclipseBattle();
+        
+        assertEquals(1, temp.getAttackersLevel(waterHero));     
+        assertEquals(1, temp.getAttackersLevel(earthHero)); 
+        assertEquals(1, temp.getAttackersLevel(fireHero));
+        assertEquals(1, temp.getAttackersLevel(airHero));
+        assertEquals(1, temp.getAttackersLevel(metalHero));
+        assertEquals(1, temp.getAttackersLevel(lavaHero));
         assertEquals(1, temp.getAttackersLevel(lightningHero));
     }
     

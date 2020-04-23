@@ -28,12 +28,14 @@ public class BattleDecider {
     public void chooseRandomBattle() {
        
         Random rand = new Random();
-        int num = rand.nextInt((1 - 0) + 1) + 0;
+        int num = rand.nextInt((2 - 0) + 2) + 0;
         
         if (num == 0) {
             setBattle(new BlizzardBattle(hero, villain));
-        } else {
+        } else if(num == 1) {
             setBattle(new HeatwaveBattle(hero, villain));
+        } else {
+            setBattle(new SolarEclipseBattle(hero, villain));
         }
     }
     
