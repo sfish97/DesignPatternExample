@@ -1,4 +1,4 @@
-# Assign6DesignPattern
+# Design Patterns
 
 For this project, I used the Decorator and Strategy Patterns
 
